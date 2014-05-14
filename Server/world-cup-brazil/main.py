@@ -9,430 +9,71 @@ table = {'data':[
 {'m':1,'t1':'BRAZIL','t2':'CROATIA','time':'2014-06-12T17:00-03:00'},
 {'m':2,'t1':'MEXICO','t2':'CAMEROON','time':'2014-06-13T13:00-03:00'},
 {'m':3,'t1':'SPAIN','t2':'NETHERLANDS','time':'2014-06-13T16:00-03:00'},
-{'m':50,'t1':'AAAA','t2':'BBBN','time':'2014-05-14T05:58-03:00'},
+{'m':4,'t1':'CHILE','t2':'AUSTRALIA','time':'2014-06-13T18:00-03:00'},
+{'m':5,'t1':'COLOMBIA','t2':'GREECE','time':'2014-06-14T13:00-03:00'},
+{'m':6,'t1':'URUGUAY','t2':'COSTA RICA','time':'2014-06-14T16:00-03:00'},
+{'m':7,'t1':'ENGLAND','t2':'ITALY','time':'2014-06-14T18:00-03:00'},
+{'m':8,'t1':'CÔTE D\'IVOIRE','t2':'JAPAN','time':'2014-06-14T22:00-03:00'},
+{'m':9,'t1':'SWITZERLAND','t2':'ECUADOR','time':'2014-06-15T13:00-03:00'},
+{'m':10,'t1':'FRANCE','t2':'HONDURAS','time':'2014-06-15T16:00-03:00'},
+{'m':11,'t1':'ARGENTINA','t2':'BOSNIA AND HERZEGOVINA','time':'2014-06-15T19:00-03:00'},
+{'m':12,'t1':'GERMANY','t2':'PORTUGAL','time':'2014-06-16T13:00-03:00'},
+{'m':13,'t1':'IRAN','t2':'NIGERIA','time':'2014-06-16T16:00-03:00'},
+{'m':14,'t1':'GHANA','t2':'USA','time':'2014-06-16T19:00-03:00'},
+{'m':15,'t1':'BELGIUM','t2':'ALGERIA','time':'2014-06-17T13:00-03:00'},
+{'m':16,'t1':'BRAZIL','t2':'MEXICO','time':'2014-06-17T16:00-03:00'},
+{'m':17,'t1':'RUSSIA','t2':'KOREA REPUBLIC','time':'2014-06-17T18:00-03:00'},
+{'m':18,'t1':'AUSTRALIA','t2':'NETHERLANDS','time':'2014-06-18T13:00-03:00'},
+{'m':19,'t1':'SPAIN','t2':'CHILE','time':'2014-06-18T16:00-03:00'},
+{'m':20,'t1':'CAMEROON','t2':'CROATIA','time':'2014-06-18T18:00-03:00'},
+{'m':21,'t1':'COLOMBIA','t2':'CÔTE D\'IVOIRE','time':'2014-06-19T13:00-03:00'},
+{'m':22,'t1':'URUGUAY','t2':'ENGLAND','time':'2014-06-19T16:00-03:00'},
+{'m':23,'t1':'JAPAN','t2':'GREECE','time':'2014-06-19T19:00-03:00'},
+{'m':24,'t1':'ITALY','t2':'COSTA RICA','time':'2014-06-20T13:00-03:00'},
+{'m':25,'t1':'SWITZERLAND','t2':'FRANCE','time':'2014-06-20T16:00-03:00'},
+{'m':26,'t1':'HONDURAS','t2':'ECUADOR','time':'2014-06-20T19:00-03:00'},
+{'m':27,'t1':'ARGENTINA','t2':'IRAN','time':'2014-06-21T13:00-03:00'},
+{'m':28,'t1':'GERMANY','t2':'GHANA','time':'2014-06-21T16:00-03:00'},
+{'m':29,'t1':'NIGERIA','t2':'BOSNIA AND HERZEGOVINA','time':'2014-06-21T18:00-03:00'},
+{'m':30,'t1':'BELGIUM','t2':'RUSSIA','time':'2014-06-22T13:00-03:00'},
+{'m':31,'t1':'KOREA REPUBLIC','t2':'ALGERIA','time':'2014-06-22T16:00-03:00'},
+{'m':32,'t1':'USA','t2':'PORTUGAL','time':'2014-06-22T18:00-03:00'},
+{'m':33,'t1':'NETHERLANDS','t2':'CHILE','time':'2014-06-23T13:00-03:00'},
+{'m':34,'t1':'AUSTRALIA','t2':'SPAIN','time':'2014-06-23T13:00-03:00'},
+{'m':35,'t1':'CAMEROON','t2':'BRAZIL','time':'2014-06-23T17:00-03:00'},
+{'m':36,'t1':'CROATIA','t2':'MEXICO','time':'2014-06-23T17:00-03:00'},
+{'m':37,'t1':'ITALY','t2':'URUGUAY','time':'2014-06-24T13:00-03:00'},
+{'m':38,'t1':'COSTA RICA','t2':'ENGLAND','time':'2014-06-24T13:00-03:00'},
+{'m':39,'t1':'JAPAN','t2':'COLOMBIA','time':'2014-06-24T16:00-03:00'},
+{'m':40,'t1':'GREECE','t2':'CÔTE D\'IVOIRE','time':'2014-06-24T17:00-03:00'},
+{'m':41,'t1':'NIGERIA','t2':'ARGENTINA','time':'2014-06-25T13:00-03:00'},
+{'m':42,'t1':'BOSNIA AND HERZEGOVINA','t2':'IRAN','time':'2014-06-25T13:00-03:00'},
+{'m':43,'t1':'HONDURAS','t2':'SWITZERLAND','time':'2014-06-25T16:00-03:00'},
+{'m':44,'t1':'ECUADOR','t2':'FRANCE','time':'2014-06-25T17:00-03:00'},
+{'m':45,'t1':'PORTUGAL','t2':'GHANA','time':'2014-06-26T13:00-03:00'},
+{'m':46,'t1':'USA','t2':'GERMANY','time':'2014-06-26T13:00-03:00'},
+{'m':47,'t1':'KOREA REPUBLIC','t2':'BELGIUM','time':'2014-06-26T17:00-03:00'},
+{'m':48,'t1':'ALGERIA','t2':'RUSSIA','time':'2014-06-26T17:00-03:00'},
+{'m':49,'t1':'[1A]','t2':'[2B]','time':'2014-06-28T13:00-03:00'},
+{'m':50,'t1':'[1C]','t2':'[2D]','time':'2014-06-28T17:00-03:00'},
+{'m':51,'t1':'[1B]','t2':'[2A]','time':'2014-06-29T13:00-03:00'},
+{'m':52,'t1':'[1D]','t2':'[2C]','time':'2014-06-29T17:00-03:00'},
+{'m':53,'t1':'[1E]','t2':'[2F]','time':'2014-06-30T13:00-03:00'},
+{'m':54,'t1':'[1G]','t2':'[2H]','time':'2014-06-30T17:00-03:00'},
+{'m':55,'t1':'[1F]','t2':'[2E]','time':'2014-07-01T13:00-03:00'},
+{'m':56,'t1':'[1H]','t2':'[2G]','time':'2014-07-01T17:00-03:00'},
+{'m':57,'t1':'[W53]','t2':'[W54]','time':'2014-07-04T13:00-03:00'},
+{'m':58,'t1':'[W49]','t2':'[W50]','time':'2014-07-04T17:00-03:00'},
+{'m':59,'t1':'[W55]','t2':'[W56]','time':'2014-07-05T13:00-03:00'},
+{'m':60,'t1':'[W51]','t2':'[W52]','time':'2014-07-05T17:00-03:00'},
+{'m':61,'t1':'[W57]','t2':'[W58]','time':'2014-07-08T17:00-03:00'},
+{'m':62,'t1':'[W59]','t2':'[W60]','time':'2014-07-09T17:00-03:00'},
+{'m':63,'t1':'[L61]','t2':'[L62]','time':'2014-07-12T17:00-03:00'},
+{'m':64,'t1':'[W61]','t2':'[W62]','time':'2014-07-13T16:00-03:00'},
+{'m':500,'t1':'BRAZIL','t2':'CROATIA','time':'2014-05-14T09:38-03:00'},
 ]}
 
-'''
 
-13 JUN 2014 - 18:00 Local time
-GROUP B
-Arena Pantanal
-Cuiaba
-ChileCHILEAustraliaAUSTRALIA
-18:00
-Saturday 14 June
-Change to your time
-14 JUN 2014 - 13:00 Local time
-GROUP C
-Estadio Mineirao
-Belo Horizonte
-ColombiaCOLOMBIAGreeceGREECE
-13:00
-14 JUN 2014 - 16:00 Local time
-GROUP D
-Estadio Castelao
-Fortaleza
-UruguayURUGUAYCosta RicaCOSTA RICA
-16:00
-14 JUN 2014 - 18:00 Local time
-GROUP D
-Arena Amazonia
-Manaus
-EnglandENGLANDItalyITALY
-18:00
-14 JUN 2014 - 22:00 Local time
-GROUP C
-Arena Pernambuco
-Recife
-Côte d'IvoireCÔTE D'IVOIREJapanJAPAN
-22:00
-Sunday 15 June
-Change to your time
-15 JUN 2014 - 13:00 Local time
-GROUP E
-Estadio Nacional
-Brasilia
-SwitzerlandSWITZERLANDEcuadorECUADOR
-13:00
-15 JUN 2014 - 16:00 Local time
-GROUP E
-Estadio Beira-Rio
-Porto Alegre
-FranceFRANCEHondurasHONDURAS
-16:00
-15 JUN 2014 - 19:00 Local time
-GROUP F
-Maracanã - Estádio Jornalista Mário Filho
-Rio De Janeiro
-ArgentinaARGENTINABosnia and HerzegovinaBOSNIA AND HERZEGOVINA
-19:00
-Monday 16 June
-Change to your time
-16 JUN 2014 - 13:00 Local time
-GROUP G
-Arena Fonte Nova
-Salvador
-GermanyGERMANYPortugalPORTUGAL
-13:00
-16 JUN 2014 - 16:00 Local time
-GROUP F
-Arena da Baixada
-Curitiba
-IranIRANNigeriaNIGERIA
-16:00
-16 JUN 2014 - 19:00 Local time
-GROUP G
-Estadio das Dunas
-Natal
-GhanaGHANAUSAUSA
-19:00
-Tuesday 17 June
-Change to your time
-17 JUN 2014 - 13:00 Local time
-GROUP H
-Estadio Mineirao
-Belo Horizonte
-BelgiumBELGIUMAlgeriaALGERIA
-13:00
-17 JUN 2014 - 16:00 Local time
-GROUP A
-Estadio Castelao
-Fortaleza
-BrazilBRAZILMexicoMEXICO
-16:00
-17 JUN 2014 - 18:00 Local time
-GROUP H
-Arena Pantanal
-Cuiaba
-RussiaRUSSIAKorea RepublicKOREA REPUBLIC
-18:00
-Wednesday 18 June
-Change to your time
-18 JUN 2014 - 13:00 Local time
-GROUP B
-Estadio Beira-Rio
-Porto Alegre
-AustraliaAUSTRALIANetherlandsNETHERLANDS
-13:00
-18 JUN 2014 - 16:00 Local time
-GROUP B
-Maracanã - Estádio Jornalista Mário Filho
-Rio De Janeiro
-SpainSPAINChileCHILE
-16:00
-18 JUN 2014 - 18:00 Local time
-GROUP A
-Arena Amazonia
-Manaus
-CameroonCAMEROONCroatiaCROATIA
-18:00
-Thursday 19 June
-Change to your time
-19 JUN 2014 - 13:00 Local time
-GROUP C
-Estadio Nacional
-Brasilia
-ColombiaCOLOMBIACôte d'IvoireCÔTE D'IVOIRE
-13:00
-19 JUN 2014 - 16:00 Local time
-GROUP D
-Arena de Sao Paulo
-Sao Paulo
-UruguayURUGUAYEnglandENGLAND
-16:00
-19 JUN 2014 - 19:00 Local time
-GROUP C
-Estadio das Dunas
-Natal
-JapanJAPANGreeceGREECE
-19:00
-Friday 20 June
-Change to your time
-20 JUN 2014 - 13:00 Local time
-GROUP D
-Arena Pernambuco
-Recife
-ItalyITALYCosta RicaCOSTA RICA
-13:00
-20 JUN 2014 - 16:00 Local time
-GROUP E
-Arena Fonte Nova
-Salvador
-SwitzerlandSWITZERLANDFranceFRANCE
-16:00
-20 JUN 2014 - 19:00 Local time
-GROUP E
-Arena da Baixada
-Curitiba
-HondurasHONDURASEcuadorECUADOR
-19:00
-Saturday 21 June
-Change to your time
-21 JUN 2014 - 13:00 Local time
-GROUP F
-Estadio Mineirao
-Belo Horizonte
-ArgentinaARGENTINAIranIRAN
-13:00
-21 JUN 2014 - 16:00 Local time
-GROUP G
-Estadio Castelao
-Fortaleza
-GermanyGERMANYGhanaGHANA
-16:00
-21 JUN 2014 - 18:00 Local time
-GROUP F
-Arena Pantanal
-Cuiaba
-NigeriaNIGERIABosnia and HerzegovinaBOSNIA AND HERZEGOVINA
-18:00
-Sunday 22 June
-Change to your time
-22 JUN 2014 - 13:00 Local time
-GROUP H
-Maracanã - Estádio Jornalista Mário Filho
-Rio De Janeiro
-BelgiumBELGIUMRussiaRUSSIA
-13:00
-22 JUN 2014 - 16:00 Local time
-GROUP H
-Estadio Beira-Rio
-Porto Alegre
-Korea RepublicKOREA REPUBLICAlgeriaALGERIA
-16:00
-22 JUN 2014 - 18:00 Local time
-GROUP G
-Arena Amazonia
-Manaus
-USAUSAPortugalPORTUGAL
-18:00
-Monday 23 June
-Change to your time
-23 JUN 2014 - 13:00 Local time
-GROUP B
-Arena de Sao Paulo
-Sao Paulo
-NetherlandsNETHERLANDSChileCHILE
-13:00
-23 JUN 2014 - 13:00 Local time
-GROUP B
-Arena da Baixada
-Curitiba
-AustraliaAUSTRALIASpainSPAIN
-13:00
-23 JUN 2014 - 17:00 Local time
-GROUP A
-Estadio Nacional
-Brasilia
-CameroonCAMEROONBrazilBRAZIL
-17:00
-23 JUN 2014 - 17:00 Local time
-GROUP A
-Arena Pernambuco
-Recife
-CroatiaCROATIAMexicoMEXICO
-17:00
-Tuesday 24 June
-Change to your time
-24 JUN 2014 - 13:00 Local time
-GROUP D
-Estadio das Dunas
-Natal
-ItalyITALYUruguayURUGUAY
-13:00
-24 JUN 2014 - 13:00 Local time
-GROUP D
-Estadio Mineirao
-Belo Horizonte
-Costa RicaCOSTA RICAEnglandENGLAND
-13:00
-24 JUN 2014 - 16:00 Local time
-GROUP C
-Arena Pantanal
-Cuiaba
-JapanJAPANColombiaCOLOMBIA
-16:00
-24 JUN 2014 - 17:00 Local time
-GROUP C
-Estadio Castelao
-Fortaleza
-GreeceGREECECôte d'IvoireCÔTE D'IVOIRE
-17:00
-Wednesday 25 June
-Change to your time
-25 JUN 2014 - 13:00 Local time
-GROUP F
-Estadio Beira-Rio
-Porto Alegre
-NigeriaNIGERIAArgentinaARGENTINA
-13:00
-25 JUN 2014 - 13:00 Local time
-GROUP F
-Arena Fonte Nova
-Salvador
-Bosnia and HerzegovinaBOSNIA AND HERZEGOVINAIranIRAN
-13:00
-25 JUN 2014 - 16:00 Local time
-GROUP E
-Arena Amazonia
-Manaus
-HondurasHONDURASSwitzerlandSWITZERLAND
-16:00
-25 JUN 2014 - 17:00 Local time
-GROUP E
-Maracanã - Estádio Jornalista Mário Filho
-Rio De Janeiro
-EcuadorECUADORFranceFRANCE
-17:00
-Thursday 26 June
-Change to your time
-26 JUN 2014 - 13:00 Local time
-GROUP G
-Estadio Nacional
-Brasilia
-PortugalPORTUGALGhanaGHANA
-13:00
-26 JUN 2014 - 13:00 Local time
-GROUP G
-Arena Pernambuco
-Recife
-USAUSAGermanyGERMANY
-13:00
-26 JUN 2014 - 17:00 Local time
-GROUP H
-Arena de Sao Paulo
-Sao Paulo
-Korea RepublicKOREA REPUBLICBelgiumBELGIUM
-17:00
-26 JUN 2014 - 17:00 Local time
-GROUP H
-Arena da Baixada
-Curitiba
-AlgeriaALGERIARussiaRUSSIA
-17:00
-
-ROUND OF 16
-Saturday 28 June
-Change to your time
-28 JUN 2014 - 13:00 Local time
-ROUND OF 16
-Estadio Mineirao
-Belo Horizonte
-[1A][2B]
-13:00
-28 JUN 2014 - 17:00 Local time
-ROUND OF 16
-Maracanã - Estádio Jornalista Mário Filho
-Rio De Janeiro
-[1C][2D]
-17:00
-Sunday 29 June
-Change to your time
-29 JUN 2014 - 13:00 Local time
-ROUND OF 16
-Estadio Castelao
-Fortaleza
-[1B][2A]
-13:00
-29 JUN 2014 - 17:00 Local time
-ROUND OF 16
-Arena Pernambuco
-Recife
-[1D][2C]
-17:00
-Monday 30 June
-Change to your time
-30 JUN 2014 - 13:00 Local time
-ROUND OF 16
-Estadio Nacional
-Brasilia
-[1E][2F]
-13:00
-30 JUN 2014 - 17:00 Local time
-ROUND OF 16
-Estadio Beira-Rio
-Porto Alegre
-[1G][2H]
-17:00
-Tuesday 01 July
-Change to your time
-01 JUL 2014 - 13:00 Local time
-ROUND OF 16
-Arena de Sao Paulo
-Sao Paulo
-[1F][2E]
-13:00
-01 JUL 2014 - 17:00 Local time
-ROUND OF 16
-Arena Fonte Nova
-Salvador
-[1H][2G]
-17:00
-QUARTER-FINALS
-Friday 04 July
-Change to your time
-04 JUL 2014 - 13:00 Local time
-QUARTER-FINALS
-Maracanã - Estádio Jornalista Mário Filho
-Rio De Janeiro
-[W53][W54]
-13:00
-04 JUL 2014 - 17:00 Local time
-QUARTER-FINALS
-Estadio Castelao
-Fortaleza
-[W49][W50]
-17:00
-Saturday 05 July
-Change to your time
-05 JUL 2014 - 13:00 Local time
-QUARTER-FINALS
-Estadio Nacional
-Brasilia
-[W55][W56]
-13:00
-05 JUL 2014 - 17:00 Local time
-QUARTER-FINALS
-Arena Fonte Nova
-Salvador
-[W51][W52]
-17:00
-SEMI-FINALS
-Tuesday 08 July
-Change to your time
-08 JUL 2014 - 17:00 Local time
-SEMI-FINALS
-Estadio Mineirao
-Belo Horizonte
-[W57][W58]
-17:00
-Wednesday 09 July
-Change to your time
-09 JUL 2014 - 17:00 Local time
-SEMI-FINALS
-Arena de Sao Paulo
-Sao Paulo
-[W59][W60]
-17:00
-PLAY-OFF FOR THIRD PLACE
-Saturday 12 July
-Change to your time
-12 JUL 2014 - 17:00 Local time
-PLAY-OFF FOR THIRD PLACE
-Estadio Nacional
-Brasilia
-[L61][L62]
-17:00
-FINAL
-Sunday 13 July
-Change to your time
-13 JUL 2014 - 16:00 Local time
-FINAL
-Maracanã - Estádio Jornalista Mário Filho
-Rio De Janeiro
-[W61][W62]
-16:00
-'''
 
 
 def out_json(c, data):

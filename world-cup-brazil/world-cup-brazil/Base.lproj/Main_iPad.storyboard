@@ -21,7 +21,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="0.99607843139999996" green="0.85490196080000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <view key="tableFooterView" contentMode="scaleToFill" id="0Fa-Ra-THJ">
-                                    <rect key="frame" x="0.0" y="129" width="768" height="184"/>
+                                    <rect key="frame" x="0.0" y="129" width="768" height="443"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="end_of_line_icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="eER-RR-kqc">
