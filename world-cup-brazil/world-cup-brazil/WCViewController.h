@@ -8,6 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@interface WCViewController : UIViewController
+@interface WCViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+
+@property (nonatomic, weak) IBOutlet UITableView *mTable;
+@property (nonatomic, strong) NSArray *mArrayData;
+@property (nonatomic, strong) UIRefreshControl *mRefreshControl;
+
+- (IBAction)clickEndOfLine:(id)sender;
+- (void)updateData;
 
 @end

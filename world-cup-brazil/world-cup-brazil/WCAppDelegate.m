@@ -7,6 +7,8 @@
 //
 
 #import "WCAppDelegate.h"
+#import "API.h"
+#import "WCViewController.h"
 
 @implementation WCAppDelegate
 
@@ -36,11 +38,28 @@
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    API *a = [API getAPI];
+    if(a.mVC)
+        [a.mVC updateData];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
+    application.applicationIconBadgeNumber = 0;
+    UIApplicationState state = [application applicationState];
+    if (state == UIApplicationStateActive) {
+        NSString *message = [userInfo valueForKey:@"message"];
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"World Cup"
+                                                            message:message
+                                                           delegate:self
+                                                  cancelButtonTitle:@"OK"
+                                                  otherButtonTitles:nil];
+        [alertView show];
+    }
 }
 
 @end
