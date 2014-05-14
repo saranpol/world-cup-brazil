@@ -41,6 +41,8 @@
     API *a = [API getAPI];
     if(a.mVC)
         [a.mVC updateData];
+    
+    application.applicationIconBadgeNumber = 0;
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application
