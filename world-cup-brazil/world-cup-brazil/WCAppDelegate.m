@@ -48,13 +48,12 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
-- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
+- (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification {
     application.applicationIconBadgeNumber = 0;
     UIApplicationState state = [application applicationState];
     if (state == UIApplicationStateActive) {
-        NSString *message = [userInfo valueForKey:@"message"];
         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"World Cup"
-                                                            message:message
+                                                            message:notification.alertBody
                                                            delegate:self
                                                   cancelButtonTitle:@"OK"
                                                   otherButtonTitles:nil];

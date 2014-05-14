@@ -69,7 +69,7 @@
         NSString *alert = [NSString stringWithFormat:@"%@ VS %@ will start in 15 minutes", mLabelT1.text, mLabelT2.text];
         notification.alertBody = alert;
         notification.soundName = UILocalNotificationDefaultSoundName;
-        notification.userInfo = @{@"match":mMatch, @"message":alert};
+        notification.userInfo = @{@"match":mMatch};
         notification.applicationIconBadgeNumber = 1;
         [[UIApplication sharedApplication] scheduleLocalNotification:notification];
         NSLog(@"%@ %@", mDate, alert);
