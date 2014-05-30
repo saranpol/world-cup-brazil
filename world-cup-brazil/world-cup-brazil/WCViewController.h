@@ -13,6 +13,9 @@
 @property (nonatomic, weak) IBOutlet UITableView *mTable;
 @property (nonatomic, strong) NSArray *mArrayData;
 @property (nonatomic, strong) UIRefreshControl *mRefreshControl;
+@property (nonatomic, strong) NSArray *mArrayGroupData;
+@property (nonatomic, strong) NSDictionary *mDicGroupData;
+
 
 - (IBAction)clickEndOfLine:(id)sender;
 - (void)updateData;

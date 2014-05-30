@@ -14,6 +14,8 @@
 @property (nonatomic, weak) IBOutlet UILabel *mLabelT1;
 @property (nonatomic, weak) IBOutlet UILabel *mLabelT2;
 @property (nonatomic, weak) IBOutlet UISwitch *mSwitch;
+@property (nonatomic, weak) IBOutlet UIImageView *mImageViewT1;
+@property (nonatomic, weak) IBOutlet UIImageView *mImageViewT2;
 @property (nonatomic, strong) NSDate *mDate;
 @property (nonatomic, strong) NSNumber *mMatch;
 

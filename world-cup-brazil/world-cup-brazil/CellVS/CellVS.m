@@ -13,9 +13,12 @@
 @synthesize mLabelTime;
 @synthesize mLabelT1;
 @synthesize mLabelT2;
+@synthesize mImageViewT1;
+@synthesize mImageViewT2;
 @synthesize mSwitch;
 @synthesize mDate;
 @synthesize mMatch;
+
 
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
@@ -23,6 +26,8 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         // Initialization code
+
+
     }
     return self;
 }
@@ -30,6 +35,20 @@
 - (void)awakeFromNib
 {
     // Initialization code
+    [mSwitch setOnTintColor:[UIColor colorWithRed:0/255.0f green:146/255.0f blue:62/255.0f alpha:1.0]];
+//    [mSwitch setTintColor:[UIColor colorWithRed:173/255.0f green:178/255.0f blue:176/255.0f alpha:1.0]];
+    [mSwitch setTintColor:[UIColor colorWithWhite:0.9 alpha:1.0]];
+
+    [mLabelTime setFont:[UIFont fontWithName:@"Open Sans" size:10]];
+    [mLabelT1 setFont:[self getFont]];
+    [mLabelT2 setFont:[self getFont]];
+
+}
+
+-(UIFont *)getFont
+{
+    UIFont *font = [UIFont fontWithName:@"Open Sans" size:14];
+    return font;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
