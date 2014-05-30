@@ -74,7 +74,7 @@
 		6B88C93019388FBE00622F4D /* Argentina.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B88C90F19388FBE00622F4D /* Argentina.png */; };
 		6B88C93119388FBE00622F4D /* Australia.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B88C91019388FBE00622F4D /* Australia.png */; };
 		6B88C93219388FBE00622F4D /* Belgium.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B88C91119388FBE00622F4D /* Belgium.png */; };
-		6B88C93319388FBE00622F4D /* Bosnia and Herzegovina.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B88C91219388FBE00622F4D /* Bosnia and Herzegovina.png */; };
+		6B88C93319388FBE00622F4D /* Bosnia And Herzegovina.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B88C91219388FBE00622F4D /* Bosnia And Herzegovina.png */; };
 		6B88C93419388FBE00622F4D /* Brazil.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B88C91319388FBE00622F4D /* Brazil.png */; };
 		6B88C93519388FBE00622F4D /* Cameroon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B88C91419388FBE00622F4D /* Cameroon.png */; };
 		6B88C93619388FBE00622F4D /* Chile.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B88C91519388FBE00622F4D /* Chile.png */; };
@@ -232,7 +232,7 @@
 		6B88C90F19388FBE00622F4D /* Argentina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Argentina.png; sourceTree = "<group>"; };
 		6B88C91019388FBE00622F4D /* Australia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Australia.png; sourceTree = "<group>"; };
 		6B88C91119388FBE00622F4D /* Belgium.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Belgium.png; sourceTree = "<group>"; };
-		6B88C91219388FBE00622F4D /* Bosnia and Herzegovina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Bosnia and Herzegovina.png"; sourceTree = "<group>"; };
+		6B88C91219388FBE00622F4D /* Bosnia And Herzegovina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Bosnia And Herzegovina.png"; sourceTree = "<group>"; };
 		6B88C91319388FBE00622F4D /* Brazil.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Brazil.png; sourceTree = "<group>"; };
 		6B88C91419388FBE00622F4D /* Cameroon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Cameroon.png; sourceTree = "<group>"; };
 		6B88C91519388FBE00622F4D /* Chile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Chile.png; sourceTree = "<group>"; };
@@ -545,7 +545,7 @@
 				6B88C90F19388FBE00622F4D /* Argentina.png */,
 				6B88C91019388FBE00622F4D /* Australia.png */,
 				6B88C91119388FBE00622F4D /* Belgium.png */,
-				6B88C91219388FBE00622F4D /* Bosnia and Herzegovina.png */,
+				6B88C91219388FBE00622F4D /* Bosnia And Herzegovina.png */,
 				6B88C91319388FBE00622F4D /* Brazil.png */,
 				6B88C91419388FBE00622F4D /* Cameroon.png */,
 				6B88C91519388FBE00622F4D /* Chile.png */,
@@ -705,7 +705,7 @@
 				6B88C94919388FBE00622F4D /* Russia.png in Resources */,
 				6B88C76A1938658600622F4D /* OpenSans-LightItalic.ttf in Resources */,
 				6B88C93619388FBE00622F4D /* Chile.png in Resources */,
-				6B88C93319388FBE00622F4D /* Bosnia and Herzegovina.png in Resources */,
+				6B88C93319388FBE00622F4D /* Bosnia And Herzegovina.png in Resources */,
 				432C51B31922EF1700EB1929 /* README.txt in Resources */,
 				432C51B71922F73700EB1929 /* end_of_line_icon.png in Resources */,
 				6B88C93B19388FBE00622F4D /* Ecuador.png in Resources */,
