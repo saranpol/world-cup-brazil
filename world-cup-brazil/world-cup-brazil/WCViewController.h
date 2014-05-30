@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "UITableViewNoDelay.h"
 
 @interface WCViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
-@property (nonatomic, weak) IBOutlet UITableView *mTable;
+@property (nonatomic, weak) IBOutlet UITableViewNoDelay *mTable;
 @property (nonatomic, strong) NSArray *mArrayData;
 @property (nonatomic, strong) UIRefreshControl *mRefreshControl;
 @property (nonatomic, strong) NSArray *mArrayGroupData;

@@ -74,7 +74,6 @@
 - (void)updateData:(UIRefreshControl *)refreshControl {
     API *a = [API getAPI];
     [a api_get_table:^(id JSON){
-        [refreshControl endRefreshing];
         NSDictionary *json = (NSDictionary*)JSON;
         if(json){
             self.mArrayData = [json objectForKey:@"data"];
@@ -87,17 +86,18 @@
 
             for (NSDictionary *d in aryData) {
                 NSString *sTime = [d objectForKey:@"time"];
+                NSString *sConvertTime = [self getTime:sTime];
 
                 BOOL iSAdd = NO;
                 for (NSString * s in newAry) {
-                    if ([s isEqualToString:[self getTime:sTime]])
+                    if ([s isEqualToString:sConvertTime])
                         iSAdd = YES;
                 }
                 
                 if (!iSAdd) {
-                    [newAry addObject:[self getTime:sTime]];
+                    [newAry addObject:sConvertTime];
                     // save dic
-                    [newDic setObject:[NSMutableArray array] forKey:[self getTime:sTime]];
+                    [newDic setObject:[NSMutableArray array] forKey:sConvertTime];
                 }
             }
             
@@ -105,7 +105,8 @@
             
             for (NSDictionary *d in aryData) {
                 NSString *sTime = [d objectForKey:@"time"];
-                NSMutableArray *tempAry = [newDic objectForKey:[self getTime:sTime]];
+                NSString *sConvertTime = [self getTime:sTime];
+                NSMutableArray *tempAry = [newDic objectForKey:sConvertTime];
                 [tempAry addObject:d];
             }
             
@@ -115,6 +116,9 @@
 
             [mTable reloadData];
             [a saveObject:json forKey:M_TABLE];
+            
+            [refreshControl endRefreshing];
+
         }
     }failure:^(NSError *failure){
         [refreshControl endRefreshing];

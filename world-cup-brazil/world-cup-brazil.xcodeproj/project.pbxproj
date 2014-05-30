@@ -107,6 +107,7 @@
 		6BD64248193764F600FDF724 /* dot@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BD64244193764F600FDF724 /* dot@2x.png */; };
 		6BD6424D1937650B00FDF724 /* bg_cell.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BD6424B1937650B00FDF724 /* bg_cell.png */; };
 		6BD6424E1937650B00FDF724 /* bg_cell@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BD6424C1937650B00FDF724 /* bg_cell@2x.png */; };
+		6BEDDF7C1938A7FA00905C1E /* UITableViewNoDelay.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BEDDF7B1938A7FA00905C1E /* UITableViewNoDelay.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -265,6 +266,8 @@
 		6BD64244193764F600FDF724 /* dot@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dot@2x.png"; sourceTree = "<group>"; };
 		6BD6424B1937650B00FDF724 /* bg_cell.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_cell.png; sourceTree = "<group>"; };
 		6BD6424C1937650B00FDF724 /* bg_cell@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_cell@2x.png"; sourceTree = "<group>"; };
+		6BEDDF7A1938A7FA00905C1E /* UITableViewNoDelay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITableViewNoDelay.h; sourceTree = "<group>"; };
+		6BEDDF7B1938A7FA00905C1E /* UITableViewNoDelay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UITableViewNoDelay.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -311,6 +314,7 @@
 		432C51351922C86500EB1929 /* Libs */ = {
 			isa = PBXGroup;
 			children = (
+				6BEDDF791938A7FA00905C1E /* UITableViewNoDelay */,
 				432C51A31922EF1700EB1929 /* Admob */,
 				432C51421922C86500EB1929 /* AFNetworking */,
 				432C51561922C86500EB1929 /* SDWebImage */,
@@ -578,6 +582,15 @@
 			path = Flag;
 			sourceTree = "<group>";
 		};
+		6BEDDF791938A7FA00905C1E /* UITableViewNoDelay */ = {
+			isa = PBXGroup;
+			children = (
+				6BEDDF7A1938A7FA00905C1E /* UITableViewNoDelay.h */,
+				6BEDDF7B1938A7FA00905C1E /* UITableViewNoDelay.m */,
+			);
+			path = UITableViewNoDelay;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -730,6 +743,7 @@
 			files = (
 				43C234791922A17B006ED96E /* WCViewController.m in Sources */,
 				432C518E1922C86500EB1929 /* UIImage+WebP.m in Sources */,
+				6BEDDF7C1938A7FA00905C1E /* UITableViewNoDelay.m in Sources */,
 				432C517D1922C86500EB1929 /* AFSecurityPolicy.m in Sources */,
 				43C234701922A17B006ED96E /* WCAppDelegate.m in Sources */,
 				432C517A1922C86500EB1929 /* AFHTTPRequestOperationManager.m in Sources */,
