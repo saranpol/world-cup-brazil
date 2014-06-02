@@ -59,6 +59,7 @@
 		43C234841922A17C006ED96E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43C234631922A17B006ED96E /* UIKit.framework */; };
 		43C2348C1922A17C006ED96E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 43C2348A1922A17C006ED96E /* InfoPlist.strings */; };
 		43C2348E1922A17C006ED96E /* world_cup_brazilTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 43C2348D1922A17C006ED96E /* world_cup_brazilTests.m */; };
+		43F07F61193D02B500C5E49E /* ViewPredict.m in Sources */ = {isa = PBXBuildFile; fileRef = 43F07F60193D02B500C5E49E /* ViewPredict.m */; };
 		6B430454193C54A3001BD6C4 /* bg_cell-iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B430452193C54A3001BD6C4 /* bg_cell-iPad.png */; };
 		6B430455193C54A3001BD6C4 /* bg_cell-iPad@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B430453193C54A3001BD6C4 /* bg_cell-iPad@2x.png */; };
 		6B676D56193CA0E500829106 /* ViewTeamSchedule.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B676D55193CA0E500829106 /* ViewTeamSchedule.m */; };
@@ -221,6 +222,8 @@
 		43C234891922A17C006ED96E /* world-cup-brazilTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "world-cup-brazilTests-Info.plist"; sourceTree = "<group>"; };
 		43C2348B1922A17C006ED96E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		43C2348D1922A17C006ED96E /* world_cup_brazilTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = world_cup_brazilTests.m; sourceTree = "<group>"; };
+		43F07F5F193D02B500C5E49E /* ViewPredict.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewPredict.h; sourceTree = "<group>"; };
+		43F07F60193D02B500C5E49E /* ViewPredict.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewPredict.m; sourceTree = "<group>"; };
 		6B430452193C54A3001BD6C4 /* bg_cell-iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_cell-iPad.png"; sourceTree = "<group>"; };
 		6B430453193C54A3001BD6C4 /* bg_cell-iPad@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_cell-iPad@2x.png"; sourceTree = "<group>"; };
 		6B676D54193CA0E500829106 /* ViewTeamSchedule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewTeamSchedule.h; sourceTree = "<group>"; };
@@ -496,6 +499,7 @@
 				43C2346F1922A17B006ED96E /* WCAppDelegate.m */,
 				43C234771922A17B006ED96E /* WCViewController.h */,
 				43C234781922A17B006ED96E /* WCViewController.m */,
+				43F07F5E193D02A900C5E49E /* ViewPredict */,
 				6B676D53193CA0E500829106 /* ViewTeamSchedule */,
 				432C51911922CECC00EB1929 /* CellVS */,
 				43C2347A1922A17B006ED96E /* Images.xcassets */,
@@ -532,6 +536,15 @@
 				43C2348A1922A17C006ED96E /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		43F07F5E193D02A900C5E49E /* ViewPredict */ = {
+			isa = PBXGroup;
+			children = (
+				43F07F5F193D02B500C5E49E /* ViewPredict.h */,
+				43F07F60193D02B500C5E49E /* ViewPredict.m */,
+			);
+			path = ViewPredict;
 			sourceTree = "<group>";
 		};
 		6B676D53193CA0E500829106 /* ViewTeamSchedule */ = {
@@ -776,6 +789,7 @@
 				432C51841922C86500EB1929 /* SDImageCache.m in Sources */,
 				432C517F1922C86500EB1929 /* AFURLRequestSerialization.m in Sources */,
 				432C517B1922C86500EB1929 /* AFHTTPSessionManager.m in Sources */,
+				43F07F61193D02B500C5E49E /* ViewPredict.m in Sources */,
 				432C517C1922C86500EB1929 /* AFNetworkReachabilityManager.m in Sources */,
 				432C51851922C86500EB1929 /* SDWebImageCompat.m in Sources */,
 				432C51831922C86500EB1929 /* NSData+GIF.m in Sources */,

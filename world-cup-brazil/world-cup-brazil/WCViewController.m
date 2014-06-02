@@ -12,6 +12,7 @@
 #import "GADBannerView.h"
 #import "ViewUtil.h"
 #import "ViewTeamSchedule.h"
+#import "ViewPredict.h"
 
 @implementation WCViewController
 
@@ -207,19 +208,23 @@
     NSRange range = [[d objectForKey:@"t1"] rangeOfString:@"["];
     if (range.location != NSNotFound)
     {
-        [cell.mImageViewT1 setImage:[UIImage imageNamed:@"Unknown.png"]];
+        [cell.mButtonT1 setImage:[UIImage imageNamed:@"Unknown.png"] forState:UIControlStateNormal];
     }else {
-        [cell.mImageViewT1 setImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@.png",[[d objectForKey:@"t1"] capitalizedString]]]];
+        [cell.mButtonT1 setImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@.png",[[d objectForKey:@"t1"] capitalizedString]]] forState:UIControlStateNormal];
     }
     
     NSRange range2 = [[d objectForKey:@"t2"] rangeOfString:@"["];
     if (range2.location != NSNotFound)
     {
-        [cell.mImageViewT2 setImage:[UIImage imageNamed:@"Unknown.png"]];
+        [cell.mButtonT2 setImage:[UIImage imageNamed:@"Unknown.png"] forState:UIControlStateNormal];
     }else {
-        [cell.mImageViewT2 setImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@.png",[[d objectForKey:@"t2"] capitalizedString]]]];
+        [cell.mButtonT2 setImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@.png",[[d objectForKey:@"t2"] capitalizedString]]] forState:UIControlStateNormal];
     }
 
+    NSInteger m = [[d objectForKey:@"m"] integerValue];
+    [cell.mButtonT1 setTag:m];
+    [cell.mButtonT2 setTag:m];
+    [cell.mButtonPredict setTag:m];
     
     [cell.mLabelTime setText:[self getTimeShow:[d objectForKey:@"time"] cell:cell]];
     cell.mMatch = [d objectForKey:@"m"];
@@ -450,10 +455,28 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
-    if ([[segue identifier] isEqualToString:@"GotoViewTeam1"] || [[segue identifier] isEqualToString:@"GotoViewTeam2"]) {
+    if ([[segue identifier] isEqualToString:@"GotoViewTeam1"]){
         ViewTeamSchedule *v = [segue destinationViewController];
-//        v.xxxx
+        UIButton *b = (UIButton*)sender;
+        NSDictionary *d = [mArrayData objectAtIndex:b.tag-1];
+        NSString *t1 = [d objectForKey:@"t1"];
+        v.mInterestTeam = t1;
+        
+    } else if ([[segue identifier] isEqualToString:@"GotoViewTeam2"]) {
+        ViewTeamSchedule *v = [segue destinationViewController];
+        UIButton *b = (UIButton*)sender;
+        NSDictionary *d = [mArrayData objectAtIndex:b.tag-1];
+        NSString *t2 = [d objectForKey:@"t2"];
+        v.mInterestTeam = t2;
+        
+    } else if ([[segue identifier] isEqualToString:@"GotoViewPredict"]) {
+        ViewPredict *v = [segue destinationViewController];
+        UIButton *b = (UIButton*)sender;
+        NSDictionary *d = [mArrayData objectAtIndex:b.tag-1];
+        v.mDictMatch = d;
+        
     }
+
 }
 
 

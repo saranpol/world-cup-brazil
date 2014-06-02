@@ -15,11 +15,13 @@
     int mCountDownTimer;
 }
 
+@property (nonatomic, weak) IBOutlet UILabel *mTitle;
 @property (nonatomic, weak) IBOutlet UITableViewNoDelay *mTable;
 @property (nonatomic, strong) NSArray *mArrayData;
 @property (nonatomic, strong) UIRefreshControl *mRefreshControl;
 @property (nonatomic, strong) NSArray *mArrayGroupData;
 @property (nonatomic, strong) NSDictionary *mDicGroupData;
+@property (nonatomic, strong) NSString *mInterestTeam;
 @property (nonatomic, weak) IBOutlet UIView *mViewPicker;
 @property (nonatomic, weak) IBOutlet UIDatePicker *mDatePickerView;
 

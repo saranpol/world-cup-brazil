@@ -11,9 +11,11 @@
 #import "CellVS.h"
 #import "GADBannerView.h"
 #import "ViewUtil.h"
+#import "ViewPredict.h"
 
 @implementation ViewTeamSchedule
 
+@synthesize mTitle;
 @synthesize mTable;
 @synthesize mArrayData;
 @synthesize mRefreshControl;
@@ -21,6 +23,8 @@
 @synthesize mDicGroupData;
 @synthesize mViewPicker;
 @synthesize mDatePickerView;
+@synthesize mInterestTeam;
+
 
 - (void)viewDidLoad
 {
@@ -65,6 +69,14 @@
     [ad loadRequest:request];
 }
 
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [mTitle setText:mInterestTeam];
+}
+
+
+
 - (void)setUpDatePicker {
     mIsShowPicker = NO;
     [mDatePickerView setCountDownDuration:15*60];
@@ -73,6 +85,7 @@
 - (void)updateData {
     [self updateData:mRefreshControl];
 }
+
 
 
 
@@ -129,7 +142,7 @@
             }
             
             self.mDicGroupData = newDic;
-            NSLog(@"mDicGroupData %@",mDicGroupData);
+            //NSLog(@"mDicGroupData %@",mDicGroupData);
 
 
             [mTable reloadData];
@@ -202,19 +215,23 @@
     NSRange range = [[d objectForKey:@"t1"] rangeOfString:@"["];
     if (range.location != NSNotFound)
     {
-        [cell.mImageViewT1 setImage:[UIImage imageNamed:@"Unknown.png"]];
+        [cell.mButtonT1 setImage:[UIImage imageNamed:@"Unknown.png"] forState:UIControlStateNormal];
     }else {
-        [cell.mImageViewT1 setImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@.png",[[d objectForKey:@"t1"] capitalizedString]]]];
+        [cell.mButtonT1 setImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@.png",[[d objectForKey:@"t1"] capitalizedString]]] forState:UIControlStateNormal];
     }
     
     NSRange range2 = [[d objectForKey:@"t2"] rangeOfString:@"["];
     if (range2.location != NSNotFound)
     {
-        [cell.mImageViewT2 setImage:[UIImage imageNamed:@"Unknown.png"]];
+        [cell.mButtonT2 setImage:[UIImage imageNamed:@"Unknown.png"] forState:UIControlStateNormal];
     }else {
-        [cell.mImageViewT2 setImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@.png",[[d objectForKey:@"t2"] capitalizedString]]]];
+        [cell.mButtonT2 setImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@.png",[[d objectForKey:@"t2"] capitalizedString]]] forState:UIControlStateNormal];
     }
-
+    
+    NSInteger m = [[d objectForKey:@"m"] integerValue];
+    [cell.mButtonT1 setTag:m];
+    [cell.mButtonT2 setTag:m];
+    [cell.mButtonPredict setTag:m];
     
     [cell.mLabelTime setText:[self getTimeShow:[d objectForKey:@"time"] cell:cell]];
     cell.mMatch = [d objectForKey:@"m"];
@@ -420,6 +437,17 @@
         }
     }
     return nil;
+}
+
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([[segue identifier] isEqualToString:@"GotoViewPredict2"]) {
+        ViewPredict *v = [segue destinationViewController];
+        UIButton *b = (UIButton*)sender;
+        NSDictionary *d = [mArrayData objectAtIndex:b.tag-1];
+        v.mDictMatch = d;
+    }
+    
 }
 
 

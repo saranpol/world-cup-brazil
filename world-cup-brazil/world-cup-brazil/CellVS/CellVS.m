@@ -15,8 +15,9 @@
 @synthesize mLabelTime;
 @synthesize mLabelT1;
 @synthesize mLabelT2;
-@synthesize mImageViewT1;
-@synthesize mImageViewT2;
+@synthesize mButtonT1;
+@synthesize mButtonT2;
+@synthesize mButtonPredict;
 @synthesize mSwitch;
 @synthesize mDate;
 @synthesize mMatch;
