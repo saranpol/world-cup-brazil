@@ -10,6 +10,10 @@
 @synthesize mDataDict;
 @synthesize mVC;
 @synthesize mDeviceToken;
+@synthesize mDate;
+@synthesize mMatch;
+@synthesize mTeam1;
+@synthesize mTeam2;
 
 
 static API *instance;

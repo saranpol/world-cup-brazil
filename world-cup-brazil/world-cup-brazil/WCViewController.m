@@ -19,12 +19,16 @@
 @synthesize mRefreshControl;
 @synthesize mArrayGroupData;
 @synthesize mDicGroupData;
+@synthesize mViewPicker;
+@synthesize mDatePickerView;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     API *a = [API getAPI];
     a.mVC = self;
+    
+    [self setUpDatePicker];
 
     self.mRefreshControl = [[UIRefreshControl alloc] init];
     [mRefreshControl addTarget:self action:@selector(updateData:) forControlEvents:UIControlEventValueChanged];
@@ -62,6 +66,11 @@
     [ad loadRequest:request];
 
     
+}
+
+- (void)setUpDatePicker {
+    mIsShowPicker = NO;
+    [mDatePickerView setCountDownDuration:15*60];
 }
 
 - (void)updateData {
@@ -154,7 +163,13 @@
 }
 
 - (NSString*)getTimeShow:(NSString*)time cell:(CellVS*)cell {
-
+//
+//    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+//    [dateFormat setDateFormat:@"HH:mm"];
+//    NSLog(@"mDatePickerView %@", [dateFormat stringFromDate:mDatePickerView.date]);
+    
+    
+    
     NSDateFormatter *df = [[NSDateFormatter alloc] init];
     [df setLocale:[NSLocale localeWithLocaleIdentifier:@"en_US"]];
     [df setDateFormat:@"yyyy-MM-dd'T'HH:mmZZZZ"];
@@ -173,7 +188,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     CellVS *cell = [tableView dequeueReusableCellWithIdentifier:@"CellVS" forIndexPath:indexPath];
-
+    
     NSString *s = [mArrayGroupData objectAtIndex:indexPath.section];
     NSArray *ary = [mDicGroupData objectForKey:s];
     NSDictionary *d = [ary objectAtIndex:indexPath.row];
@@ -181,6 +196,7 @@
     
 //    NSDictionary *d = [mArrayData objectAtIndex:indexPath.row];
     
+    [cell setDelegate:self];
     [cell.mLabelT1 setText:[[d objectForKey:@"t1"] capitalizedString]];
     [cell.mLabelT2 setText:[[d objectForKey:@"t2"] capitalizedString]];
     
@@ -210,33 +226,63 @@
     return cell;
 }
 
+-(BOOL) isiPad{
+    BOOL iPad = NO;
+    if ( UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad )
+        iPad = YES;
+    return iPad;
+}
+
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
+    int xLabel = 0;
+    int yLabel = 0;
+    int hLabel = 0;
+    int sizeFont = 0;
+    int xLine = 0;
+    int yLine = 0;
+    int xDot = 0;
+    int yDot = 0;
+    if ([self isiPad])
+    {
+        xLabel = 70;
+        yLabel = 10;
+        hLabel = 25;
+        sizeFont = 15;
+        xLine = 30;
+        yLine = 0;
+        xDot = 27;
+        yDot = 15;
+        
+    }else {
+        xLabel = 38;
+        yLabel = 10;
+        hLabel = 18;
+        sizeFont = 12;
+        xLine = 15;
+        yLine = 0;
+        xDot = 12;
+        yDot = 15;
+    }
+    
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, 38)];
-    /* Create custom view to display section header... */
-    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(38, 10, tableView.frame.size.width, 18)];
-    [label setFont:[UIFont fontWithName:@"Open Sans" size:12]];
-
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(xLabel, yLabel, tableView.frame.size.width, 18)];
+    [label setFont:[UIFont fontWithName:@"Open Sans" size:sizeFont]];
     [label setTextColor:[UIColor colorWithRed:80/255.0 green:77/255.0 blue:77/255.0 alpha:1.0]];
     
     
-    UIView *viewLine = [[UIView alloc] initWithFrame:CGRectMake(15, 0, 2, 38)];
+    UIView *viewLine = [[UIView alloc] initWithFrame:CGRectMake(xLine, yLine, 2, 38)];
     [viewLine setBackgroundColor:[UIColor colorWithRed:189/255.0 green:195/255.0 blue:198/255.0 alpha:1.0]];
     [view addSubview:viewLine];
     
-//    UIImageView *imageDot = [[UIImageView alloc] initWithFrame:CGRectMake(15, 0, 8, 8)];
     UIImage * myImage = [UIImage imageNamed: @"dot.png"];
     UIImageView *imageDot = [[UIImageView alloc] initWithImage:myImage];
-    [imageDot setFrame:CGRectMake(12, 15, 8, 8)];
+    [imageDot setFrame:CGRectMake(xDot, yDot, 8, 8)];
     [view addSubview:imageDot];
-
 
 
     
     NSString *string =[mArrayGroupData objectAtIndex:section];
-//    NSString *string =@"test";
-
-    /* Section header is in 0th index... */
     [label setText:string];
     [view addSubview:label];
     [view setBackgroundColor:[UIColor colorWithRed:231/255.0 green:236/255.0 blue:240/255.0 alpha:1.0]]; //your background color...
@@ -251,6 +297,137 @@
 - (IBAction)clickEndOfLine:(id)sender {
     API *a = [API getAPI];
     [a gotoEndOfLine];
+}
+
+
+
+- (IBAction)clickDone:(id)sender {
+    [self hidePicker];
+    
+    
+//    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+//    [dateFormat setDateFormat:@"dd/mm/yyyy HH:mm"];
+//    [dateFormat stringFromDate:mDatePickerView.countDownDuration];
+//    NSLog(@"mDatePickerView %@", [dateFormat stringFromDate:mDatePickerView.date]);
+//
+//    // set noti
+//    mCountDownTimer = [[dateFormat stringFromDate:mDatePickerView.date] intValue];
+//    NSLog(@"mCountDownTimer %f", mDatePickerView.countDownDuration);
+    
+    API *a = [API getAPI];
+    a.mDate = [a.mDate dateByAddingTimeInterval:mDatePickerView.countDownDuration];
+    
+    [self setNotification];
+
+}
+
+
+- (void)didShowDatePicker {
+    if (!mIsShowPicker) {
+        [self showPicker];
+    }
+}
+
+- (void)didHideDatePicker {
+    if (mIsShowPicker) {
+        [self hidePicker];
+    }
+}
+
+-(void)showPicker {
+    
+//    [mDatePickerView setHidden:YES];
+//    [mDatePickerView setHidden:NO];
+    
+//    if (mIsShowPicker)
+//        return
+    
+
+    
+    [UIView animateWithDuration:0.5
+                          delay:0.0
+                        options: UIViewAnimationOptionCurveEaseOut
+                     animations:^{
+                         [ViewUtil setOriginY:mViewPicker y:64];
+                     }
+                     completion:^(BOOL isFinish) {
+//                         mIsShowPicker = YES;
+                     }];
+}
+
+-(void)hidePicker {
+    //    [ViewUtil setOriginY:mViewPicker y:428];
+    
+    int y = 568;
+    if ([self isiPad])
+        y = 1023;
+        
+    [UIView animateWithDuration:0.5
+                          delay:0.0
+                        options: UIViewAnimationOptionCurveEaseOut
+                     animations:^{
+                         [ViewUtil setOriginY:mViewPicker y:y];
+                     }
+                     completion:^(BOOL isFinish) {
+//                         mIsShowPicker = NO;
+                     }];
+}
+
+-(void)setNotification {
+    API *a = [API getAPI];
+
+    UILocalNotification *notification = [[UILocalNotification alloc] init];
+    notification.fireDate = a.mDate;
+    
+    int minutes = mDatePickerView.countDownDuration/60;
+//    NSString *timeCountDown = [NSString stringWithFormat:@"%f", mDatePickerView.countDownDuration/60];
+
+    
+    NSString *alert = @"";
+    if (minutes > 59) {
+        int min = ceil(minutes/60);
+        alert = [NSString stringWithFormat:@"%@ VS %@ will start in %d hours %d minutes", a.mTeam1, a.mTeam2 , minutes/60 , min];
+    }else {
+        alert = [NSString stringWithFormat:@"%@ VS %@ will start in %d minutes", a.mTeam1, a.mTeam2 , minutes];
+    }
+    
+    [NSString stringWithFormat:@"%@ VS %@ will start in %d minutes", a.mTeam1, a.mTeam2 , minutes];
+    notification.alertBody = alert;
+    notification.soundName = UILocalNotificationDefaultSoundName;
+    notification.userInfo = @{@"match":a.mMatch};
+    notification.applicationIconBadgeNumber = 1;
+    [[UIApplication sharedApplication] scheduleLocalNotification:notification];
+    NSLog(@"%@ %@", a.mDate, alert);
+    
+    
+    
+    NSString *message_alert = @"";
+    if (minutes > 59) {
+        int min = minutes%60;
+        message_alert = [NSString stringWithFormat:@"will remind before match %d hours %d minutes", minutes/60 , min];
+    }else {
+        message_alert = [NSString stringWithFormat:@"will remind before match %d minutes" , minutes];
+    }
+    
+    
+    UIAlertView *x = [[UIAlertView alloc] initWithTitle:[NSString stringWithFormat:@"%@ VS %@", a.mTeam1, a.mTeam2 ]
+                                                message:message_alert
+                                               delegate:nil
+                                      cancelButtonTitle:@"OK"
+                                      otherButtonTitles:nil];
+    [x show];
+}
+
+
+- (UILocalNotification*)getNoti {
+    for(UILocalNotification *n in [[UIApplication sharedApplication] scheduledLocalNotifications]){
+        NSNumber *m = [n.userInfo objectForKey:@"match"];
+        API *a = [API getAPI];
+        if (m && [m isEqualToNumber:a.mMatch]) {
+            return n;
+        }
+    }
+    return nil;
 }
 
 @end

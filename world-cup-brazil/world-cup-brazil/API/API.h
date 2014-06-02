@@ -26,6 +26,10 @@ typedef void (^APIFail)(NSError*);
 @property (nonatomic, strong) NSMutableDictionary *mDataDict;
 @property (nonatomic, assign) WCViewController *mVC;
 @property (nonatomic, strong) NSString *mDeviceToken;
+@property (nonatomic, strong) NSDate *mDate;
+@property (nonatomic, strong) NSNumber *mMatch;
+@property (nonatomic, strong) NSString *mTeam1;
+@property (nonatomic, strong) NSString *mTeam2;
 
 // Localize
 - (NSString*)getLanguage;
