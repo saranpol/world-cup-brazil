@@ -61,6 +61,7 @@
 		43C2348E1922A17C006ED96E /* world_cup_brazilTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 43C2348D1922A17C006ED96E /* world_cup_brazilTests.m */; };
 		6B430454193C54A3001BD6C4 /* bg_cell-iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B430452193C54A3001BD6C4 /* bg_cell-iPad.png */; };
 		6B430455193C54A3001BD6C4 /* bg_cell-iPad@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B430453193C54A3001BD6C4 /* bg_cell-iPad@2x.png */; };
+		6B676D56193CA0E500829106 /* ViewTeamSchedule.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B676D55193CA0E500829106 /* ViewTeamSchedule.m */; };
 		6B88C7631938658600622F4D /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = 6B88C7581938658600622F4D /* LICENSE.txt */; };
 		6B88C7641938658600622F4D /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6B88C7591938658600622F4D /* OpenSans-Bold.ttf */; };
 		6B88C7651938658600622F4D /* OpenSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6B88C75A1938658600622F4D /* OpenSans-BoldItalic.ttf */; };
@@ -222,6 +223,8 @@
 		43C2348D1922A17C006ED96E /* world_cup_brazilTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = world_cup_brazilTests.m; sourceTree = "<group>"; };
 		6B430452193C54A3001BD6C4 /* bg_cell-iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_cell-iPad.png"; sourceTree = "<group>"; };
 		6B430453193C54A3001BD6C4 /* bg_cell-iPad@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_cell-iPad@2x.png"; sourceTree = "<group>"; };
+		6B676D54193CA0E500829106 /* ViewTeamSchedule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewTeamSchedule.h; sourceTree = "<group>"; };
+		6B676D55193CA0E500829106 /* ViewTeamSchedule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewTeamSchedule.m; sourceTree = "<group>"; };
 		6B88C7581938658600622F4D /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
 		6B88C7591938658600622F4D /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Bold.ttf"; sourceTree = "<group>"; };
 		6B88C75A1938658600622F4D /* OpenSans-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-BoldItalic.ttf"; sourceTree = "<group>"; };
@@ -493,6 +496,7 @@
 				43C2346F1922A17B006ED96E /* WCAppDelegate.m */,
 				43C234771922A17B006ED96E /* WCViewController.h */,
 				43C234781922A17B006ED96E /* WCViewController.m */,
+				6B676D53193CA0E500829106 /* ViewTeamSchedule */,
 				432C51911922CECC00EB1929 /* CellVS */,
 				43C2347A1922A17B006ED96E /* Images.xcassets */,
 				432C51311922C69500EB1929 /* API */,
@@ -528,6 +532,15 @@
 				43C2348A1922A17C006ED96E /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		6B676D53193CA0E500829106 /* ViewTeamSchedule */ = {
+			isa = PBXGroup;
+			children = (
+				6B676D54193CA0E500829106 /* ViewTeamSchedule.h */,
+				6B676D55193CA0E500829106 /* ViewTeamSchedule.m */,
+			);
+			path = ViewTeamSchedule;
 			sourceTree = "<group>";
 		};
 		6B88C7571938658600622F4D /* Font */ = {
@@ -778,6 +791,7 @@
 				432C518F1922C86500EB1929 /* UIImageView+WebCache.m in Sources */,
 				432C518D1922C86500EB1929 /* UIImage+MultiFormat.m in Sources */,
 				432C51861922C86500EB1929 /* SDWebImageDecoder.m in Sources */,
+				6B676D56193CA0E500829106 /* ViewTeamSchedule.m in Sources */,
 				43C2346C1922A17B006ED96E /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

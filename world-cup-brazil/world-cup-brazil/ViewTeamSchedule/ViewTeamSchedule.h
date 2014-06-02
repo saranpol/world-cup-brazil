@@ -1,5 +1,5 @@
 //
-//  WCViewController.h
+//  ViewTeamSchedule.h
 //  world-cup-brazil
 //
 //  Created by saranpol on 5/14/2557 BE.
@@ -9,9 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "UITableViewNoDelay.h"
 #import "CellVS.h"
-#import "ViewTeamSchedule.h"
 
-@interface WCViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, CellVSDelegate> {
+@interface ViewTeamSchedule : UIViewController <UITableViewDataSource, UITableViewDelegate, CellVSDelegate> {
     BOOL mIsShowPicker;
     int mCountDownTimer;
 }
@@ -23,10 +22,11 @@
 @property (nonatomic, strong) NSDictionary *mDicGroupData;
 @property (nonatomic, weak) IBOutlet UIView *mViewPicker;
 @property (nonatomic, weak) IBOutlet UIDatePicker *mDatePickerView;
-@property (nonatomic, strong) ViewTeamSchedule *mViewTeamSchedule;
 
 - (IBAction)clickDone:(id)sender;
-- (IBAction)clickEndOfLine:(id)sender;
+- (IBAction)clickFlipBack:(id)sender;
+
+//- (IBAction)clickEndOfLine:(id)sender;
 - (void)updateData;
 - (void)showPicker;
 - (void)hidePicker;

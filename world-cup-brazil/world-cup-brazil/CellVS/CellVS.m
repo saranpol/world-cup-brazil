@@ -146,4 +146,35 @@
     }
 }
 
+
+- (IBAction)clickTeam1:(id)sender {
+    if (mDelegate)
+        [self.mDelegate didGotoViewTeamSchedule:mLabelT1.text];
+}
+
+
+- (IBAction)clickTeam2:(id)sender {
+    if (mDelegate)
+        [self.mDelegate didGotoViewTeamSchedule:mLabelT2.text];
+}
+
+
 @end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

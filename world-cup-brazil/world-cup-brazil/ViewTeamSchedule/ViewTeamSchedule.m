@@ -1,19 +1,18 @@
 //
-//  WCViewController.m
+//  ViewTeamSchedule.m
 //  world-cup-brazil
 //
 //  Created by saranpol on 5/14/2557 BE.
 //  Copyright (c) 2557 hlpth. All rights reserved.
 //
 
-#import "WCViewController.h"
+#import "ViewTeamSchedule.h"
 #import "API.h"
 #import "CellVS.h"
 #import "GADBannerView.h"
 #import "ViewUtil.h"
-#import "ViewTeamSchedule.h"
 
-@implementation WCViewController
+@implementation ViewTeamSchedule
 
 @synthesize mTable;
 @synthesize mArrayData;
@@ -22,14 +21,11 @@
 @synthesize mDicGroupData;
 @synthesize mViewPicker;
 @synthesize mDatePickerView;
-@synthesize mViewTeamSchedule;
-
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     API *a = [API getAPI];
-    a.mVC = self;
     
     [self setUpDatePicker];
 
@@ -41,7 +37,7 @@
     NSDictionary *json = [a getObject:M_TABLE];
     if(json){
         self.mArrayData = [json objectForKey:@"data"];
-//        NSLog(@"mArrayData %@",mArrayData);
+        
         [mTable reloadData];
     }
     
@@ -67,8 +63,6 @@
     GADRequest *request = [GADRequest request];
 //    request.testDevices = @[ GAD_SIMULATOR_ID ];
     [ad loadRequest:request];
-
-    
 }
 
 - (void)setUpDatePicker {
@@ -85,6 +79,18 @@
 
 - (void)updateData:(UIRefreshControl *)refreshControl {
     API *a = [API getAPI];
+    
+//    [a api_get_table:^(id JSON){
+//        NSDictionary *json = (NSDictionary*)JSON;
+//        if(json){
+//            [refreshControl endRefreshing];
+//        }
+//    }failure:^(NSError *failure){
+//        [refreshControl endRefreshing];
+//    }];
+    
+    
+    
     [a api_get_table:^(id JSON){
         NSDictionary *json = (NSDictionary*)JSON;
         if(json){
@@ -123,7 +129,7 @@
             }
             
             self.mDicGroupData = newDic;
-//            NSLog(@"mDicGroupData %@",mDicGroupData);
+            NSLog(@"mDicGroupData %@",mDicGroupData);
 
 
             [mTable reloadData];
@@ -149,8 +155,6 @@
     
     NSArray *ary = [mDicGroupData objectForKey:s];
     return (ary) ? [ary count] : 0;
-    
-//    return (mArrayData) ? [mArrayData count] : 0;
 }
 
 
@@ -166,12 +170,6 @@
 }
 
 - (NSString*)getTimeShow:(NSString*)time cell:(CellVS*)cell {
-//
-//    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
-//    [dateFormat setDateFormat:@"HH:mm"];
-//    NSLog(@"mDatePickerView %@", [dateFormat stringFromDate:mDatePickerView.date]);
-    
-    
     
     NSDateFormatter *df = [[NSDateFormatter alloc] init];
     [df setLocale:[NSLocale localeWithLocaleIdentifier:@"en_US"]];
@@ -196,9 +194,6 @@
     NSArray *ary = [mDicGroupData objectForKey:s];
     NSDictionary *d = [ary objectAtIndex:indexPath.row];
 
-    
-//    NSDictionary *d = [mArrayData objectAtIndex:indexPath.row];
-    
     [cell setDelegate:self];
     [cell.mLabelT1 setText:[[d objectForKey:@"t1"] capitalizedString]];
     [cell.mLabelT2 setText:[[d objectForKey:@"t2"] capitalizedString]];
@@ -307,21 +302,15 @@
 - (IBAction)clickDone:(id)sender {
     [self hidePicker];
     
-    
-//    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
-//    [dateFormat setDateFormat:@"dd/mm/yyyy HH:mm"];
-//    [dateFormat stringFromDate:mDatePickerView.countDownDuration];
-//    NSLog(@"mDatePickerView %@", [dateFormat stringFromDate:mDatePickerView.date]);
-//
-//    // set noti
-//    mCountDownTimer = [[dateFormat stringFromDate:mDatePickerView.date] intValue];
-//    NSLog(@"mCountDownTimer %f", mDatePickerView.countDownDuration);
-    
     API *a = [API getAPI];
     a.mDate = [a.mDate dateByAddingTimeInterval:mDatePickerView.countDownDuration];
     
     [self setNotification];
 
+}
+
+- (IBAction)clickFlipBack:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 
@@ -431,29 +420,6 @@
         }
     }
     return nil;
-}
-
-
-- (void)didGotoViewTeamSchedule:(NSString*)team {
-    NSLog(@"%@",team);
-    
-    if (!mViewTeamSchedule)
-        self.mViewTeamSchedule =  [[ViewTeamSchedule alloc] initWithNibName:@"ViewTeamSchedule" bundle:nil];    
-    [self.navigationController pushViewController:mViewTeamSchedule animated:YES];
-
-
-    
-//    [mViewTeamSchedule updateUI];
-//    [mViewTeamSchedule setup:YES];
-    
-}
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    
-    if ([[segue identifier] isEqualToString:@"GotoViewTeam1"] || [[segue identifier] isEqualToString:@"GotoViewTeam2"]) {
-        ViewTeamSchedule *v = [segue destinationViewController];
-//        v.xxxx
-    }
 }
 
 

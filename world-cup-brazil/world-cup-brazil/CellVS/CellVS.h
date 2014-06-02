@@ -12,8 +12,8 @@
 - (void)didShowDatePicker;
 - (void)didHideDatePicker;
 
-//- (void)didSetNotification:(NSNumber*)match date:(NSData*)date team1:(NSString*)team1 team2:(NSString*)team2;
-//- (void)didCancelNotification;
+- (void)didGotoViewTeamSchedule:(NSString*)team;
+
 
 @end
 
@@ -32,6 +32,9 @@
 
 
 - (IBAction)clickSwitch:(id)sender;
+- (IBAction)clickTeam1:(id)sender;
+- (IBAction)clickTeam2:(id)sender;
+
 - (void)updateSwitchStatus;
 - (void)setDelegate:(id)delegate;
 
