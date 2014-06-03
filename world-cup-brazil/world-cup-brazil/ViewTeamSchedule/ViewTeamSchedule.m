@@ -125,11 +125,8 @@
                 }
             }
 
-            NSLog(@"mInterestTeam %@",mInterestTeam );
-            NSLog(@"oneTeamAry %@",oneTeamAry );
 
             aryData = oneTeamAry;
-            NSLog(@"aryData %@",aryData );
 
             NSMutableArray *newAry = [[NSMutableArray alloc]init];
             NSMutableDictionary *newDic = [[NSMutableDictionary alloc]init];
