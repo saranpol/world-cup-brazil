@@ -471,12 +471,19 @@
     return nil;
 }
 
+- (NSDictionary*)findMatch:(NSInteger)match_id {
+    for(NSDictionary *d in mArrayData){
+        if([[d objectForKey:@"m"] integerValue] == match_id)
+            return d;
+    }
+    return nil;
+}
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString:@"GotoViewPredict2"]) {
         ViewPredict *v = [segue destinationViewController];
         UIButton *b = (UIButton*)sender;
-        NSDictionary *d = [mArrayData objectAtIndex:b.tag-1];
+        NSDictionary *d = [self findMatch:b.tag];
         v.mDictMatch = d;
     }
     

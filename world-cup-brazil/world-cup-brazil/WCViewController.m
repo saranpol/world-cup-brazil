@@ -460,12 +460,20 @@
     [self.navigationController pushViewController:mViewTeamSchedule animated:YES];
 }
 
+- (NSDictionary*)findMatch:(NSInteger)match_id {
+    for(NSDictionary *d in mArrayData){
+        if([[d objectForKey:@"m"] integerValue] == match_id)
+            return d;
+    }
+    return nil;
+}
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
     if ([[segue identifier] isEqualToString:@"GotoViewTeam1"]){
         ViewTeamSchedule *v = [segue destinationViewController];
         UIButton *b = (UIButton*)sender;
-        NSDictionary *d = [mArrayData objectAtIndex:b.tag-1];
+        NSDictionary *d = [self findMatch:b.tag];
         NSString *t1 = [d objectForKey:@"t1"];
         v.mInterestTeam = t1;
         [v setDelegate:self];
@@ -473,7 +481,7 @@
     } else if ([[segue identifier] isEqualToString:@"GotoViewTeam2"]) {
         ViewTeamSchedule *v = [segue destinationViewController];
         UIButton *b = (UIButton*)sender;
-        NSDictionary *d = [mArrayData objectAtIndex:b.tag-1];
+        NSDictionary *d = [self findMatch:b.tag];
         NSString *t2 = [d objectForKey:@"t2"];
         v.mInterestTeam = t2;
         [v setDelegate:self];
@@ -481,7 +489,7 @@
     } else if ([[segue identifier] isEqualToString:@"GotoViewPredict"]) {
         ViewPredict *v = [segue destinationViewController];
         UIButton *b = (UIButton*)sender;
-        NSDictionary *d = [mArrayData objectAtIndex:b.tag-1];
+        NSDictionary *d = [self findMatch:b.tag];
         v.mDictMatch = d;
         
     }

@@ -17,6 +17,7 @@
 @synthesize mImageT2;
 @synthesize mImageAnimal;
 @synthesize mViewContent;
+@synthesize mCountLR;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -52,65 +53,23 @@
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
-//    [self performSelector:@selector(animateNokTurnLeftTurnRight) withObject:nil afterDelay:0.1];
+    [self performSelector:@selector(animateLR) withObject:nil afterDelay:0.1];
+}
 
-    [self performSelector:@selector(animateAnimal) withObject:nil afterDelay:1.0];
-    [self performSelector:@selector(animateNokFly) withObject:nil afterDelay:0.1];
+- (void)animateLR {
+        self.mCountLR++;
+        mImageAnimal.transform = CGAffineTransformMake(mImageAnimal.transform.a * -1, 0, 0, 1, mImageAnimal.transform.tx, 0);
+        NSNumber *winner = [mDictMatch objectForKey:@"winner"];
+        if(mCountLR < 4+[winner integerValue])
+            [self performSelector:@selector(animateLR) withObject:nil afterDelay:0.5];
+        else{
+            [self performSelector:@selector(animateNokFly) withObject:nil afterDelay:0.1];
+            [self performSelector:@selector(animateAnimal) withObject:nil afterDelay:2.0];
+        }
+
 }
 
 
-- (void)animateNokTurnLeftTurnRight {
-
-    UIImage* flippedImage1 = [UIImage imageNamed:@"nok_1.png"];
-    UIImage* sourceImageLeft = [UIImage imageWithCGImage:flippedImage1.CGImage
-                                                scale:flippedImage1.scale orientation: UIImageOrientationUpMirrored];
-    
-    UIImage* sourceImageRight = [UIImage imageNamed:@"nok_1.png"];
-
-    NSMutableArray *images = [[NSMutableArray alloc] init];
-    [images addObject:sourceImageRight];
-    [images addObject:sourceImageLeft];
-    
-    mImageAnimal.animationImages = images;
-    mImageAnimal.animationDuration = 0.7;
-    [mImageAnimal startAnimating];
-    
-//    NSArray *imageNames = @[@"nok_1.png", @"nok_1.png"];
-//    NSMutableArray *images = [[NSMutableArray alloc] init];
-//    for (int i = 0; i < imageNames.count; i++) {
-//        if (i == 0) {
-//            UIImage* sourceImageRight = [UIImage imageNamed:[imageNames objectAtIndex:i]];
-//            sourceImageRight.transform = CGAffineTransformMakeScale(-1, 1);
-////            [images addObject:[UIImage imageNamed:[imageNames objectAtIndex:i]]];
-//            [images addObject:sourceImageRight];
-//        }else
-//            [images addObject:[UIImage imageNamed:[imageNames objectAtIndex:i]]];
-//    }
-    
-
-//    mImageAnimal.animationImages = images;
-//    mImageAnimal.animationDuration = 0.7;
-//    [mImageAnimal startAnimating];
-    
-//    NSArray *imageNames = @[@"nok_1.png", @"nok_2.png"];
-//    NSMutableArray *images = [[NSMutableArray alloc] init];
-//    for (int i = 0; i < imageNames.count; i++) {
-//        [images addObject:[UIImage imageNamed:[imageNames objectAtIndex:i]]];
-//    }
-//    
-//    mImageAnimal.animationImages = images;
-//    mImageAnimal.animationDuration = 0.7;
-//    [mImageAnimal startAnimating];
-    
-
-    
-    
-//    [mImageAnimal setImage:flippedImage1];
-    
-    
-//    [self performSelector:@selector(animateAnimal) withObject:nil afterDelay:1.0];
-//    [self performSelector:@selector(animateNokFly) withObject:nil afterDelay:1.0];
-}
 
 - (void)animateNokFly {
     NSArray *imageNames = @[@"nok_1.png", @"nok_2.png"];
