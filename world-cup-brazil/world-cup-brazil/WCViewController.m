@@ -445,12 +445,6 @@
     if (!mViewTeamSchedule)
         self.mViewTeamSchedule =  [[ViewTeamSchedule alloc] initWithNibName:@"ViewTeamSchedule" bundle:nil];    
     [self.navigationController pushViewController:mViewTeamSchedule animated:YES];
-
-
-    
-//    [mViewTeamSchedule updateUI];
-//    [mViewTeamSchedule setup:YES];
-    
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
@@ -461,6 +455,7 @@
         NSDictionary *d = [mArrayData objectAtIndex:b.tag-1];
         NSString *t1 = [d objectForKey:@"t1"];
         v.mInterestTeam = t1;
+        [v setDelegate:self];
         
     } else if ([[segue identifier] isEqualToString:@"GotoViewTeam2"]) {
         ViewTeamSchedule *v = [segue destinationViewController];
@@ -468,6 +463,7 @@
         NSDictionary *d = [mArrayData objectAtIndex:b.tag-1];
         NSString *t2 = [d objectForKey:@"t2"];
         v.mInterestTeam = t2;
+        [v setDelegate:self];
         
     } else if ([[segue identifier] isEqualToString:@"GotoViewPredict"]) {
         ViewPredict *v = [segue destinationViewController];
@@ -477,6 +473,10 @@
         
     }
 
+}
+
+- (void)didReloadViewMain {
+    [mTable reloadData];
 }
 
 

@@ -24,7 +24,7 @@
 @synthesize mViewPicker;
 @synthesize mDatePickerView;
 @synthesize mInterestTeam;
-
+@synthesize mDelegate;
 
 - (void)viewDidLoad
 {
@@ -112,10 +112,30 @@
             aryData = [json objectForKey:@"data"];
             
             
+            NSMutableArray *oneTeamAry = [[NSMutableArray alloc]init];
+            for (NSDictionary *d in aryData) {
+                if ([[d objectForKey:@"t1"] isEqualToString:mInterestTeam]) {
+                    NSLog(@"%@",d );
+                    [oneTeamAry addObject:d];
+                }
+                
+                if ([[d objectForKey:@"t2"] isEqualToString:mInterestTeam]) {
+                    NSLog(@"%@",d );
+                    [oneTeamAry addObject:d];
+                }
+            }
+
+            NSLog(@"mInterestTeam %@",mInterestTeam );
+            NSLog(@"oneTeamAry %@",oneTeamAry );
+
+            aryData = oneTeamAry;
+            NSLog(@"aryData %@",aryData );
+
             NSMutableArray *newAry = [[NSMutableArray alloc]init];
             NSMutableDictionary *newDic = [[NSMutableDictionary alloc]init];
 
             for (NSDictionary *d in aryData) {
+                
                 NSString *sTime = [d objectForKey:@"time"];
                 NSString *sConvertTime = [self getTime:sTime];
 
@@ -133,7 +153,8 @@
             }
             
             self.mArrayGroupData = newAry;
-            
+//            NSLog(@"mArrayGroupData %@",mArrayGroupData);
+
             for (NSDictionary *d in aryData) {
                 NSString *sTime = [d objectForKey:@"time"];
                 NSString *sConvertTime = [self getTime:sTime];
@@ -142,7 +163,7 @@
             }
             
             self.mDicGroupData = newDic;
-            //NSLog(@"mDicGroupData %@",mDicGroupData);
+//            NSLog(@"mDicGroupData %@",mDicGroupData);
 
 
             [mTable reloadData];
@@ -327,6 +348,9 @@
 }
 
 - (IBAction)clickFlipBack:(id)sender {
+    if (mDelegate) {
+        [mDelegate didReloadViewMain];
+    }
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
@@ -450,6 +474,12 @@
     
 }
 
+- (void)setDelegate:(id)delegate {
+    self.mDelegate = delegate;
+}
 
+- (void)didGotoViewTeamSchedule:(NSString*)team {
+    NSLog(@"%@",team);
+}
 
 @end

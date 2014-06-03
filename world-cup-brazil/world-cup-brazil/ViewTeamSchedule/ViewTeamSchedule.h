@@ -10,6 +10,12 @@
 #import "UITableViewNoDelay.h"
 #import "CellVS.h"
 
+
+@protocol ViewTeamScheduleDelegate <NSObject>
+@optional
+- (void)didReloadViewMain;
+@end
+
 @interface ViewTeamSchedule : UIViewController <UITableViewDataSource, UITableViewDelegate, CellVSDelegate> {
     BOOL mIsShowPicker;
     int mCountDownTimer;
@@ -24,6 +30,7 @@
 @property (nonatomic, strong) NSString *mInterestTeam;
 @property (nonatomic, weak) IBOutlet UIView *mViewPicker;
 @property (nonatomic, weak) IBOutlet UIDatePicker *mDatePickerView;
+@property (strong, nonatomic) id<ViewTeamScheduleDelegate> mDelegate;
 
 - (IBAction)clickDone:(id)sender;
 - (IBAction)clickFlipBack:(id)sender;
@@ -32,5 +39,6 @@
 - (void)updateData;
 - (void)showPicker;
 - (void)hidePicker;
+- (void)setDelegate:(id)delegate;
 
 @end
