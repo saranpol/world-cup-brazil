@@ -229,21 +229,29 @@
     [cell.mLabelT1 setText:[[d objectForKey:@"t1"] capitalizedString]];
     [cell.mLabelT2 setText:[[d objectForKey:@"t2"] capitalizedString]];
     
-    
+    BOOL isTeam1 = NO;
     NSRange range = [[d objectForKey:@"t1"] rangeOfString:@"["];
     if (range.location != NSNotFound)
     {
         [cell.mButtonT1 setImage:[UIImage imageNamed:@"Unknown.png"] forState:UIControlStateNormal];
     }else {
+        isTeam1 = YES;
         [cell.mButtonT1 setImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@.png",[[d objectForKey:@"t1"] capitalizedString]]] forState:UIControlStateNormal];
     }
     
+    BOOL isTeam2 = NO;
     NSRange range2 = [[d objectForKey:@"t2"] rangeOfString:@"["];
     if (range2.location != NSNotFound)
     {
         [cell.mButtonT2 setImage:[UIImage imageNamed:@"Unknown.png"] forState:UIControlStateNormal];
     }else {
+        isTeam2 = YES;
         [cell.mButtonT2 setImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@.png",[[d objectForKey:@"t2"] capitalizedString]]] forState:UIControlStateNormal];
+    }
+    
+    [cell.mButtonPredict setHidden:YES];
+    if (isTeam1 == YES && isTeam2 == YES) {
+        [cell.mButtonPredict setHidden:NO];
     }
     
     NSInteger m = [[d objectForKey:@"m"] integerValue];
@@ -373,12 +381,15 @@
 //        return
     
 
-    
+    int y = 64;
+    if (self.view.frame.size.height == 480) {
+        y = 0;
+    }
     [UIView animateWithDuration:0.5
                           delay:0.0
                         options: UIViewAnimationOptionCurveEaseOut
                      animations:^{
-                         [ViewUtil setOriginY:mViewPicker y:64];
+                         [ViewUtil setOriginY:mViewPicker y:y];
                      }
                      completion:^(BOOL isFinish) {
 //                         mIsShowPicker = YES;
@@ -388,7 +399,7 @@
 -(void)hidePicker {
     //    [ViewUtil setOriginY:mViewPicker y:428];
     
-    int y = 568;
+    int y = self.view.frame.size.height;
     if ([self isiPad])
         y = 1023;
         

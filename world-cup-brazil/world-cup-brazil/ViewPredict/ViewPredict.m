@@ -35,26 +35,97 @@
     NSRange range = [[mDictMatch objectForKey:@"t1"] rangeOfString:@"["];
     if (range.location != NSNotFound)
     {
-        [mImageT1 setImage:[UIImage imageNamed:@"Unknown.png"]];
+        [mImageT1 setImage:[UIImage imageNamed:@"Unknown_l.png"]];
     }else {
-        [mImageT1 setImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@.png",[[mDictMatch objectForKey:@"t1"] capitalizedString]]]];
+        [mImageT1 setImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@_l.png",[[mDictMatch objectForKey:@"t1"] capitalizedString]]]];
     }
     
     NSRange range2 = [[mDictMatch objectForKey:@"t2"] rangeOfString:@"["];
     if (range2.location != NSNotFound)
     {
-        [mImageT2 setImage:[UIImage imageNamed:@"Unknown.png"]];
+        [mImageT2 setImage:[UIImage imageNamed:@"Unknown_l.png"]];
     }else {
-        [mImageT2 setImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@.png",[[mDictMatch objectForKey:@"t2"] capitalizedString]]]];
+        [mImageT2 setImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@_l.png",[[mDictMatch objectForKey:@"t2"] capitalizedString]]]];
     }
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    [self performSelector:@selector(animateAnimal) withObject:nil afterDelay:0.1];
+    
+//    [self performSelector:@selector(animateNokTurnLeftTurnRight) withObject:nil afterDelay:0.1];
+
+    [self performSelector:@selector(animateAnimal) withObject:nil afterDelay:1.0];
+    [self performSelector:@selector(animateNokFly) withObject:nil afterDelay:0.1];
+}
+
+
+- (void)animateNokTurnLeftTurnRight {
+
+    UIImage* flippedImage1 = [UIImage imageNamed:@"nok_1.png"];
+    UIImage* sourceImageLeft = [UIImage imageWithCGImage:flippedImage1.CGImage
+                                                scale:flippedImage1.scale orientation: UIImageOrientationUpMirrored];
+    
+    UIImage* sourceImageRight = [UIImage imageNamed:@"nok_1.png"];
+
+    NSMutableArray *images = [[NSMutableArray alloc] init];
+    [images addObject:sourceImageRight];
+    [images addObject:sourceImageLeft];
+    
+    mImageAnimal.animationImages = images;
+    mImageAnimal.animationDuration = 0.7;
+    [mImageAnimal startAnimating];
+    
+//    NSArray *imageNames = @[@"nok_1.png", @"nok_1.png"];
+//    NSMutableArray *images = [[NSMutableArray alloc] init];
+//    for (int i = 0; i < imageNames.count; i++) {
+//        if (i == 0) {
+//            UIImage* sourceImageRight = [UIImage imageNamed:[imageNames objectAtIndex:i]];
+//            sourceImageRight.transform = CGAffineTransformMakeScale(-1, 1);
+////            [images addObject:[UIImage imageNamed:[imageNames objectAtIndex:i]]];
+//            [images addObject:sourceImageRight];
+//        }else
+//            [images addObject:[UIImage imageNamed:[imageNames objectAtIndex:i]]];
+//    }
+    
+
+//    mImageAnimal.animationImages = images;
+//    mImageAnimal.animationDuration = 0.7;
+//    [mImageAnimal startAnimating];
+    
+//    NSArray *imageNames = @[@"nok_1.png", @"nok_2.png"];
+//    NSMutableArray *images = [[NSMutableArray alloc] init];
+//    for (int i = 0; i < imageNames.count; i++) {
+//        [images addObject:[UIImage imageNamed:[imageNames objectAtIndex:i]]];
+//    }
+//    
+//    mImageAnimal.animationImages = images;
+//    mImageAnimal.animationDuration = 0.7;
+//    [mImageAnimal startAnimating];
+    
+
+    
+    
+//    [mImageAnimal setImage:flippedImage1];
+    
+    
+//    [self performSelector:@selector(animateAnimal) withObject:nil afterDelay:1.0];
+//    [self performSelector:@selector(animateNokFly) withObject:nil afterDelay:1.0];
+}
+
+- (void)animateNokFly {
+    NSArray *imageNames = @[@"nok_1.png", @"nok_2.png"];
+    NSMutableArray *images = [[NSMutableArray alloc] init];
+    for (int i = 0; i < imageNames.count; i++) {
+        [images addObject:[UIImage imageNamed:[imageNames objectAtIndex:i]]];
+    }
+    
+    mImageAnimal.animationImages = images;
+    mImageAnimal.animationDuration = 0.7;
+    [mImageAnimal startAnimating];
 }
 
 - (void)animateAnimal {
+    
     [UIView animateWithDuration:2.0
                           delay:0.0
          usingSpringWithDamping:0.4
