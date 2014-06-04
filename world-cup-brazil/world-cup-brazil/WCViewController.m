@@ -459,7 +459,7 @@
 
 
 - (void)didGotoViewTeamSchedule:(NSString*)team {
-    NSLog(@"%@",team);
+//    NSLog(@"%@",team);
     
     if (!mViewTeamSchedule)
         self.mViewTeamSchedule =  [[ViewTeamSchedule alloc] initWithNibName:@"ViewTeamSchedule" bundle:nil];    

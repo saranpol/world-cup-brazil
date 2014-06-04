@@ -95,7 +95,12 @@
                         options:UIViewAnimationOptionCurveEaseInOut
                      animations:^{
                          NSNumber *winner = [mDictMatch objectForKey:@"winner"];
-                         float y = mImageT1.frame.origin.y + 80;
+                         
+                         float y = mImageT1.frame.origin.y + 90;
+                         if ( UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad )
+                            y = mImageT1.frame.origin.y + 170;
+                         
+                         
                          switch ([winner integerValue]) {
                              case 0:{ // Draw
                                  float x = (mImageT1.frame.origin.x + mImageT2.frame.origin.x)/2.0;
