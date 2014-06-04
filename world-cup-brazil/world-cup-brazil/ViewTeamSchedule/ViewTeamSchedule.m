@@ -115,12 +115,12 @@
             NSMutableArray *oneTeamAry = [[NSMutableArray alloc]init];
             for (NSDictionary *d in aryData) {
                 if ([[d objectForKey:@"t1"] isEqualToString:mInterestTeam]) {
-                    NSLog(@"%@",d );
+//                    NSLog(@"%@",d );
                     [oneTeamAry addObject:d];
                 }
                 
                 if ([[d objectForKey:@"t2"] isEqualToString:mInterestTeam]) {
-                    NSLog(@"%@",d );
+//                    NSLog(@"%@",d );
                     [oneTeamAry addObject:d];
                 }
             }
@@ -494,7 +494,7 @@
 }
 
 - (void)didGotoViewTeamSchedule:(NSString*)team {
-    NSLog(@"%@",team);
+//    NSLog(@"%@",team);
 }
 
 @end
