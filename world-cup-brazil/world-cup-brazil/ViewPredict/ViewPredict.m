@@ -18,6 +18,7 @@
 @synthesize mImageAnimal;
 @synthesize mViewContent;
 @synthesize mCountLR;
+@synthesize mTitle;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -48,6 +49,8 @@
     }else {
         [mImageT2 setImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@_l.png",[[mDictMatch objectForKey:@"t2"] capitalizedString]]]];
     }
+    
+    [mTitle setText:[NSString stringWithFormat:@"%@ Vs %@", [[mDictMatch objectForKey:@"t1"] capitalizedString] ,[[mDictMatch objectForKey:@"t2"] capitalizedString]]];
 }
 
 - (void)viewDidAppear:(BOOL)animated {

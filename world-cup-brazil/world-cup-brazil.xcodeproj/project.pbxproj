@@ -62,6 +62,8 @@
 		43F07F61193D02B500C5E49E /* ViewPredict.m in Sources */ = {isa = PBXBuildFile; fileRef = 43F07F60193D02B500C5E49E /* ViewPredict.m */; };
 		6B430454193C54A3001BD6C4 /* bg_cell-iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B430452193C54A3001BD6C4 /* bg_cell-iPad.png */; };
 		6B430455193C54A3001BD6C4 /* bg_cell-iPad@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B430453193C54A3001BD6C4 /* bg_cell-iPad@2x.png */; };
+		6B573D1A193EFBF4009D0A2C /* icon_nok@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B573D18193EFBF4009D0A2C /* icon_nok@2x.png */; };
+		6B573D1B193EFBF4009D0A2C /* icon_nok.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B573D19193EFBF4009D0A2C /* icon_nok.png */; };
 		6B676D56193CA0E500829106 /* ViewTeamSchedule.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B676D55193CA0E500829106 /* ViewTeamSchedule.m */; };
 		6B820BDF193DB14900796100 /* Algeria~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B820B57193DB14900796100 /* Algeria~ipad.png */; };
 		6B820BE0193DB14900796100 /* Argentina~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B820B58193DB14900796100 /* Argentina~ipad.png */; };
@@ -362,6 +364,8 @@
 		43F07F60193D02B500C5E49E /* ViewPredict.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewPredict.m; sourceTree = "<group>"; };
 		6B430452193C54A3001BD6C4 /* bg_cell-iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_cell-iPad.png"; sourceTree = "<group>"; };
 		6B430453193C54A3001BD6C4 /* bg_cell-iPad@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_cell-iPad@2x.png"; sourceTree = "<group>"; };
+		6B573D18193EFBF4009D0A2C /* icon_nok@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_nok@2x.png"; sourceTree = "<group>"; };
+		6B573D19193EFBF4009D0A2C /* icon_nok.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_nok.png; sourceTree = "<group>"; };
 		6B676D54193CA0E500829106 /* ViewTeamSchedule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewTeamSchedule.h; sourceTree = "<group>"; };
 		6B676D55193CA0E500829106 /* ViewTeamSchedule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewTeamSchedule.m; sourceTree = "<group>"; };
 		6B820B57193DB14900796100 /* Algeria~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Algeria~ipad.png"; sourceTree = "<group>"; };
@@ -714,6 +718,8 @@
 				6BD6424C1937650B00FDF724 /* bg_cell@2x.png */,
 				6B430452193C54A3001BD6C4 /* bg_cell-iPad.png */,
 				6B430453193C54A3001BD6C4 /* bg_cell-iPad@2x.png */,
+				6B573D18193EFBF4009D0A2C /* icon_nok@2x.png */,
+				6B573D19193EFBF4009D0A2C /* icon_nok.png */,
 				6BD64243193764F600FDF724 /* dot.png */,
 				6BD64244193764F600FDF724 /* dot@2x.png */,
 				432C51B51922F73700EB1929 /* end_of_line_icon.png */,
@@ -1300,8 +1306,10 @@
 				6B820C1F193DB14900796100 /* Uruguay@2x~ipad.png in Resources */,
 				6B820BF3193DB14900796100 /* Italy~ipad.png in Resources */,
 				6B820BEF193DB14900796100 /* Ghana~ipad.png in Resources */,
+				6B573D1B193EFBF4009D0A2C /* icon_nok.png in Resources */,
 				6B820C4C193DB14900796100 /* Côte D'ivoire@2x.png in Resources */,
 				6B820C22193DB14900796100 /* Argentina.png in Resources */,
+				6B573D1A193EFBF4009D0A2C /* icon_nok@2x.png in Resources */,
 				6B820C50193DB14900796100 /* France@2x.png in Resources */,
 				6B88C76C1938658600622F4D /* OpenSans-Semibold.ttf in Resources */,
 				6B820C1E193DB14900796100 /* Unknown@2x~ipad.png in Resources */,
