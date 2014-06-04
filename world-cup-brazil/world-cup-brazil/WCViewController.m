@@ -70,6 +70,12 @@
     [ad loadRequest:request];
 
     
+//    [self.view setTranslatesAutoresizingMaskIntoConstraints:NO];
+
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
 }
 
 - (void)setUpDatePicker {
