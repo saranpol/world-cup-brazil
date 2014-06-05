@@ -27,6 +27,9 @@
 @property (nonatomic, weak) IBOutlet UIButton *mButtonT1;
 @property (nonatomic, weak) IBOutlet UIButton *mButtonT2;
 @property (nonatomic, weak) IBOutlet UIButton *mButtonPredict;
+@property (nonatomic, weak) IBOutlet UIImageView *mImagePredict;
+
+@property (nonatomic, weak) IBOutlet UIView *mContentView;
 @property (nonatomic, strong) NSDate *mDate;
 @property (nonatomic, strong) NSNumber *mMatch;
 @property (strong, nonatomic) id<CellVSDelegate> mDelegate;

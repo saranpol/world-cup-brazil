@@ -60,8 +60,8 @@
 		43C2348C1922A17C006ED96E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 43C2348A1922A17C006ED96E /* InfoPlist.strings */; };
 		43C2348E1922A17C006ED96E /* world_cup_brazilTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 43C2348D1922A17C006ED96E /* world_cup_brazilTests.m */; };
 		43F07F61193D02B500C5E49E /* ViewPredict.m in Sources */ = {isa = PBXBuildFile; fileRef = 43F07F60193D02B500C5E49E /* ViewPredict.m */; };
-		6B430454193C54A3001BD6C4 /* bg_cell-iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B430452193C54A3001BD6C4 /* bg_cell-iPad.png */; };
-		6B430455193C54A3001BD6C4 /* bg_cell-iPad@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B430453193C54A3001BD6C4 /* bg_cell-iPad@2x.png */; };
+		6B430454193C54A3001BD6C4 /* bg_cell~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B430452193C54A3001BD6C4 /* bg_cell~ipad.png */; };
+		6B430455193C54A3001BD6C4 /* bg_cell@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B430453193C54A3001BD6C4 /* bg_cell@2x~ipad.png */; };
 		6B573D1A193EFBF4009D0A2C /* icon_nok@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B573D18193EFBF4009D0A2C /* icon_nok@2x.png */; };
 		6B573D1B193EFBF4009D0A2C /* icon_nok.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B573D19193EFBF4009D0A2C /* icon_nok.png */; };
 		6B676D56193CA0E500829106 /* ViewTeamSchedule.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B676D55193CA0E500829106 /* ViewTeamSchedule.m */; };
@@ -245,6 +245,28 @@
 		6B88C76B1938658600622F4D /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6B88C7601938658600622F4D /* OpenSans-Regular.ttf */; };
 		6B88C76C1938658600622F4D /* OpenSans-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6B88C7611938658600622F4D /* OpenSans-Semibold.ttf */; };
 		6B88C76D1938658600622F4D /* OpenSans-SemiboldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6B88C7621938658600622F4D /* OpenSans-SemiboldItalic.ttf */; };
+		6B9F308A1940737A00364C81 /* btn_share~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B9F30881940737A00364C81 /* btn_share~ipad.png */; };
+		6B9F308B1940737A00364C81 /* btn_share@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B9F30891940737A00364C81 /* btn_share@2x~ipad.png */; };
+		6B9F308E194075BA00364C81 /* macaw_1_disable.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B9F308C194075BA00364C81 /* macaw_1_disable.png */; };
+		6B9F308F194075BA00364C81 /* macaw_1_disable@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B9F308D194075BA00364C81 /* macaw_1_disable@2x.png */; };
+		6BB6434E194045E700F52C8F /* bg_share@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BB6434C194045E700F52C8F /* bg_share@2x.png */; };
+		6BB6434F194045E700F52C8F /* bg_share.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BB6434D194045E700F52C8F /* bg_share.png */; };
+		6BB643561940477100F52C8F /* macaw_1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BB643501940477100F52C8F /* macaw_1@2x.png */; };
+		6BB643571940477100F52C8F /* macaw_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BB643511940477100F52C8F /* macaw_2.png */; };
+		6BB643581940477100F52C8F /* macaw_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BB643521940477100F52C8F /* macaw_3.png */; };
+		6BB643591940477100F52C8F /* macaw_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BB643531940477100F52C8F /* macaw_1.png */; };
+		6BB6435A1940477100F52C8F /* macaw_3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BB643541940477100F52C8F /* macaw_3@2x.png */; };
+		6BB6435B1940477100F52C8F /* macaw_2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BB643551940477100F52C8F /* macaw_2@2x.png */; };
+		6BB6435E19404D9B00F52C8F /* btn_share@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BB6435C19404D9B00F52C8F /* btn_share@2x.png */; };
+		6BB6435F19404D9B00F52C8F /* btn_share.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BB6435D19404D9B00F52C8F /* btn_share.png */; };
+		6BB6436A1940603100F52C8F /* bg_share-ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BB643681940603100F52C8F /* bg_share-ipad.png */; };
+		6BB6436B1940603100F52C8F /* bg_share-ipad@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BB643691940603100F52C8F /* bg_share-ipad@2x.png */; };
+		6BB64372194069D400F52C8F /* macaw_2~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BB6436C194069D400F52C8F /* macaw_2~ipad.png */; };
+		6BB64373194069D400F52C8F /* macaw_1~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BB6436D194069D400F52C8F /* macaw_1~ipad.png */; };
+		6BB64374194069D400F52C8F /* macaw_3@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BB6436E194069D400F52C8F /* macaw_3@2x~ipad.png */; };
+		6BB64375194069D400F52C8F /* macaw_1@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BB6436F194069D400F52C8F /* macaw_1@2x~ipad.png */; };
+		6BB64376194069D400F52C8F /* macaw_2@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BB64370194069D400F52C8F /* macaw_2@2x~ipad.png */; };
+		6BB64377194069D400F52C8F /* macaw_3~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BB64371194069D400F52C8F /* macaw_3~ipad.png */; };
 		6BD64247193764F600FDF724 /* dot.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BD64243193764F600FDF724 /* dot.png */; };
 		6BD64248193764F600FDF724 /* dot@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BD64244193764F600FDF724 /* dot@2x.png */; };
 		6BD6424D1937650B00FDF724 /* bg_cell.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BD6424B1937650B00FDF724 /* bg_cell.png */; };
@@ -362,8 +384,8 @@
 		43C2348D1922A17C006ED96E /* world_cup_brazilTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = world_cup_brazilTests.m; sourceTree = "<group>"; };
 		43F07F5F193D02B500C5E49E /* ViewPredict.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewPredict.h; sourceTree = "<group>"; };
 		43F07F60193D02B500C5E49E /* ViewPredict.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewPredict.m; sourceTree = "<group>"; };
-		6B430452193C54A3001BD6C4 /* bg_cell-iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_cell-iPad.png"; sourceTree = "<group>"; };
-		6B430453193C54A3001BD6C4 /* bg_cell-iPad@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_cell-iPad@2x.png"; sourceTree = "<group>"; };
+		6B430452193C54A3001BD6C4 /* bg_cell~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_cell~ipad.png"; sourceTree = "<group>"; };
+		6B430453193C54A3001BD6C4 /* bg_cell@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_cell@2x~ipad.png"; sourceTree = "<group>"; };
 		6B573D18193EFBF4009D0A2C /* icon_nok@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_nok@2x.png"; sourceTree = "<group>"; };
 		6B573D19193EFBF4009D0A2C /* icon_nok.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_nok.png; sourceTree = "<group>"; };
 		6B676D54193CA0E500829106 /* ViewTeamSchedule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewTeamSchedule.h; sourceTree = "<group>"; };
@@ -548,6 +570,28 @@
 		6B88C7601938658600622F4D /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
 		6B88C7611938658600622F4D /* OpenSans-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Semibold.ttf"; sourceTree = "<group>"; };
 		6B88C7621938658600622F4D /* OpenSans-SemiboldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-SemiboldItalic.ttf"; sourceTree = "<group>"; };
+		6B9F30881940737A00364C81 /* btn_share~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_share~ipad.png"; sourceTree = "<group>"; };
+		6B9F30891940737A00364C81 /* btn_share@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_share@2x~ipad.png"; sourceTree = "<group>"; };
+		6B9F308C194075BA00364C81 /* macaw_1_disable.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = macaw_1_disable.png; sourceTree = "<group>"; };
+		6B9F308D194075BA00364C81 /* macaw_1_disable@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "macaw_1_disable@2x.png"; sourceTree = "<group>"; };
+		6BB6434C194045E700F52C8F /* bg_share@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_share@2x.png"; sourceTree = "<group>"; };
+		6BB6434D194045E700F52C8F /* bg_share.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_share.png; sourceTree = "<group>"; };
+		6BB643501940477100F52C8F /* macaw_1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "macaw_1@2x.png"; sourceTree = "<group>"; };
+		6BB643511940477100F52C8F /* macaw_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = macaw_2.png; sourceTree = "<group>"; };
+		6BB643521940477100F52C8F /* macaw_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = macaw_3.png; sourceTree = "<group>"; };
+		6BB643531940477100F52C8F /* macaw_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = macaw_1.png; sourceTree = "<group>"; };
+		6BB643541940477100F52C8F /* macaw_3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "macaw_3@2x.png"; sourceTree = "<group>"; };
+		6BB643551940477100F52C8F /* macaw_2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "macaw_2@2x.png"; sourceTree = "<group>"; };
+		6BB6435C19404D9B00F52C8F /* btn_share@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_share@2x.png"; sourceTree = "<group>"; };
+		6BB6435D19404D9B00F52C8F /* btn_share.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_share.png; sourceTree = "<group>"; };
+		6BB643681940603100F52C8F /* bg_share-ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_share-ipad.png"; sourceTree = "<group>"; };
+		6BB643691940603100F52C8F /* bg_share-ipad@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_share-ipad@2x.png"; sourceTree = "<group>"; };
+		6BB6436C194069D400F52C8F /* macaw_2~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "macaw_2~ipad.png"; sourceTree = "<group>"; };
+		6BB6436D194069D400F52C8F /* macaw_1~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "macaw_1~ipad.png"; sourceTree = "<group>"; };
+		6BB6436E194069D400F52C8F /* macaw_3@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "macaw_3@2x~ipad.png"; sourceTree = "<group>"; };
+		6BB6436F194069D400F52C8F /* macaw_1@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "macaw_1@2x~ipad.png"; sourceTree = "<group>"; };
+		6BB64370194069D400F52C8F /* macaw_2@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "macaw_2@2x~ipad.png"; sourceTree = "<group>"; };
+		6BB64371194069D400F52C8F /* macaw_3~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "macaw_3~ipad.png"; sourceTree = "<group>"; };
 		6BD64243193764F600FDF724 /* dot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dot.png; sourceTree = "<group>"; };
 		6BD64244193764F600FDF724 /* dot@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dot@2x.png"; sourceTree = "<group>"; };
 		6BD6424B1937650B00FDF724 /* bg_cell.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_cell.png; sourceTree = "<group>"; };
@@ -716,18 +760,40 @@
 				6B820B54193DB14900796100 /* Flags */,
 				6BD6424B1937650B00FDF724 /* bg_cell.png */,
 				6BD6424C1937650B00FDF724 /* bg_cell@2x.png */,
-				6B430452193C54A3001BD6C4 /* bg_cell-iPad.png */,
-				6B430453193C54A3001BD6C4 /* bg_cell-iPad@2x.png */,
-				6B573D18193EFBF4009D0A2C /* icon_nok@2x.png */,
+				6B430452193C54A3001BD6C4 /* bg_cell~ipad.png */,
+				6B430453193C54A3001BD6C4 /* bg_cell@2x~ipad.png */,
 				6B573D19193EFBF4009D0A2C /* icon_nok.png */,
+				6B573D18193EFBF4009D0A2C /* icon_nok@2x.png */,
 				6BD64243193764F600FDF724 /* dot.png */,
 				6BD64244193764F600FDF724 /* dot@2x.png */,
 				432C51B51922F73700EB1929 /* end_of_line_icon.png */,
 				432C51B61922F73700EB1929 /* end_of_line_icon@2x.png */,
-				6B842CEF193DFA1200E36A36 /* nok_1@2x.png */,
 				6B842CF0193DFA1200E36A36 /* nok_1.png */,
+				6B842CEF193DFA1200E36A36 /* nok_1@2x.png */,
 				6B842CF1193DFA1200E36A36 /* nok_2.png */,
 				6B842CF2193DFA1200E36A36 /* nok_2@2x.png */,
+				6BB643531940477100F52C8F /* macaw_1.png */,
+				6BB643501940477100F52C8F /* macaw_1@2x.png */,
+				6BB643511940477100F52C8F /* macaw_2.png */,
+				6BB643551940477100F52C8F /* macaw_2@2x.png */,
+				6BB643521940477100F52C8F /* macaw_3.png */,
+				6BB643541940477100F52C8F /* macaw_3@2x.png */,
+				6B9F308C194075BA00364C81 /* macaw_1_disable.png */,
+				6B9F308D194075BA00364C81 /* macaw_1_disable@2x.png */,
+				6BB6436D194069D400F52C8F /* macaw_1~ipad.png */,
+				6BB6436F194069D400F52C8F /* macaw_1@2x~ipad.png */,
+				6BB6436C194069D400F52C8F /* macaw_2~ipad.png */,
+				6BB64370194069D400F52C8F /* macaw_2@2x~ipad.png */,
+				6BB64371194069D400F52C8F /* macaw_3~ipad.png */,
+				6BB6436E194069D400F52C8F /* macaw_3@2x~ipad.png */,
+				6BB6435D19404D9B00F52C8F /* btn_share.png */,
+				6BB6435C19404D9B00F52C8F /* btn_share@2x.png */,
+				6B9F30881940737A00364C81 /* btn_share~ipad.png */,
+				6B9F30891940737A00364C81 /* btn_share@2x~ipad.png */,
+				6BB6434D194045E700F52C8F /* bg_share.png */,
+				6BB6434C194045E700F52C8F /* bg_share@2x.png */,
+				6BB643681940603100F52C8F /* bg_share-ipad.png */,
+				6BB643691940603100F52C8F /* bg_share-ipad@2x.png */,
 			);
 			path = Images;
 			sourceTree = "<group>";
@@ -1175,7 +1241,9 @@
 				6B820C06193DB14900796100 /* Cameroon@2x~ipad.png in Resources */,
 				6B820C23193DB14900796100 /* Australia.png in Resources */,
 				6B820C0B193DB14900796100 /* Croatia@2x~ipad.png in Resources */,
+				6BB6435B1940477100F52C8F /* macaw_2@2x.png in Resources */,
 				6B88C7631938658600622F4D /* LICENSE.txt in Resources */,
+				6BB6435E19404D9B00F52C8F /* btn_share@2x.png in Resources */,
 				6B820BE1193DB14900796100 /* Australia~ipad.png in Resources */,
 				6B820C57193DB14900796100 /* Japan@2x.png in Resources */,
 				6B842CDB193DF7E600E36A36 /* England_l.png in Resources */,
@@ -1197,6 +1265,9 @@
 				6B842CF3193DFA1200E36A36 /* nok_1@2x.png in Resources */,
 				43C234761922A17B006ED96E /* Main_iPad.storyboard in Resources */,
 				6B842CCE193DF7E600E36A36 /* Algeria_l.png in Resources */,
+				6BB6434E194045E700F52C8F /* bg_share@2x.png in Resources */,
+				6B9F308F194075BA00364C81 /* macaw_1_disable@2x.png in Resources */,
+				6BB64376194069D400F52C8F /* macaw_2@2x~ipad.png in Resources */,
 				6B842CD8193DF7E600E36A36 /* Côte D'ivoire_l.png in Resources */,
 				6BD6424D1937650B00FDF724 /* bg_cell.png in Resources */,
 				6B820C5D193DB14900796100 /* Russia@2x.png in Resources */,
@@ -1208,6 +1279,7 @@
 				6B820BEB193DB14900796100 /* Ecuador~ipad.png in Resources */,
 				6BD64247193764F600FDF724 /* dot.png in Resources */,
 				6B820C07193DB14900796100 /* Chile@2x~ipad.png in Resources */,
+				6BB64373194069D400F52C8F /* macaw_1~ipad.png in Resources */,
 				6B820BE5193DB14900796100 /* Cameroon~ipad.png in Resources */,
 				6B820BFF193DB14900796100 /* Usa~ipad.png in Resources */,
 				6B820C12193DB14900796100 /* Honduras@2x~ipad.png in Resources */,
@@ -1226,22 +1298,29 @@
 				6B820BFC193DB14900796100 /* Switzerland~ipad.png in Resources */,
 				6B820C41193DB14900796100 /* Usa.png in Resources */,
 				6B842CD4193DF7E600E36A36 /* Cameroon_l.png in Resources */,
+				6BB6436A1940603100F52C8F /* bg_share-ipad.png in Resources */,
 				6B820C03193DB14900796100 /* Belgium@2x~ipad.png in Resources */,
 				6B820C15193DB14900796100 /* Japan@2x~ipad.png in Resources */,
 				6B820BEE193DB14900796100 /* Germany~ipad.png in Resources */,
+				6BB6435A1940477100F52C8F /* macaw_3@2x.png in Resources */,
 				6B842CE1193DF7E600E36A36 /* Iran_l.png in Resources */,
+				6BB6434F194045E700F52C8F /* bg_share.png in Resources */,
 				6B820C29193DB14900796100 /* Colombia.png in Resources */,
 				6B820C14193DB14900796100 /* Italy@2x~ipad.png in Resources */,
 				6B820C1B193DB14900796100 /* Russia@2x~ipad.png in Resources */,
+				6BB643571940477100F52C8F /* macaw_2.png in Resources */,
 				43C2347B1922A17B006ED96E /* Images.xcassets in Resources */,
 				6B820C25193DB14900796100 /* Bosnia And Herzegovina.png in Resources */,
+				6B9F308E194075BA00364C81 /* macaw_1_disable.png in Resources */,
 				6B820C39193DB14900796100 /* Netherlands.png in Resources */,
 				6B820C2F193DB14900796100 /* France.png in Resources */,
 				6B88C7691938658600622F4D /* OpenSans-Light.ttf in Resources */,
 				6B842CE7193DF7E600E36A36 /* Nigeria_l.png in Resources */,
 				6B820C60193DB14900796100 /* Unknown@2x.png in Resources */,
+				6BB643581940477100F52C8F /* macaw_3.png in Resources */,
 				6B820C51193DB14900796100 /* Germany@2x.png in Resources */,
 				6B820C46193DB14900796100 /* Bosnia And Herzegovina@2x.png in Resources */,
+				6BB643591940477100F52C8F /* macaw_1.png in Resources */,
 				6B842CDF193DF7E600E36A36 /* Greece_l.png in Resources */,
 				6B842CE3193DF7E600E36A36 /* Japan_l.png in Resources */,
 				6B820C16193DB14900796100 /* Korea Republic@2x~ipad.png in Resources */,
@@ -1255,10 +1334,12 @@
 				6B820BE7193DB14900796100 /* Colombia~ipad.png in Resources */,
 				6B820BEA193DB14900796100 /* Croatia~ipad.png in Resources */,
 				6B820BF5193DB14900796100 /* Korea Republic~ipad.png in Resources */,
+				6BB6435F19404D9B00F52C8F /* btn_share.png in Resources */,
 				432C51B81922F73700EB1929 /* end_of_line_icon@2x.png in Resources */,
 				6B820C00193DB14900796100 /* Algeria@2x~ipad.png in Resources */,
 				6B820C56193DB14900796100 /* Italy@2x.png in Resources */,
-				6B430454193C54A3001BD6C4 /* bg_cell-iPad.png in Resources */,
+				6B430454193C54A3001BD6C4 /* bg_cell~ipad.png in Resources */,
+				6B9F308A1940737A00364C81 /* btn_share~ipad.png in Resources */,
 				6B842CE2193DF7E600E36A36 /* Italy_l.png in Resources */,
 				6B88C7671938658600622F4D /* OpenSans-ExtraBoldItalic.ttf in Resources */,
 				6B820C13193DB14900796100 /* Iran@2x~ipad.png in Resources */,
@@ -1281,6 +1362,7 @@
 				6B820C21193DB14900796100 /* Algeria.png in Resources */,
 				6B842CEC193DF7E600E36A36 /* Unknown_l.png in Resources */,
 				6B820BFE193DB14900796100 /* Uruguay~ipad.png in Resources */,
+				6BB64372194069D400F52C8F /* macaw_2~ipad.png in Resources */,
 				6B820C0D193DB14900796100 /* England@2x~ipad.png in Resources */,
 				6B88C76D1938658600622F4D /* OpenSans-SemiboldItalic.ttf in Resources */,
 				6B820BFD193DB14900796100 /* Unknown~ipad.png in Resources */,
@@ -1288,6 +1370,7 @@
 				6B820C52193DB14900796100 /* Ghana@2x.png in Resources */,
 				6B820BE9193DB14900796100 /* Côte D'ivoire~ipad.png in Resources */,
 				6B820BF4193DB14900796100 /* Japan~ipad.png in Resources */,
+				6BB64377194069D400F52C8F /* macaw_3~ipad.png in Resources */,
 				6B820C1D193DB14900796100 /* Switzerland@2x~ipad.png in Resources */,
 				6B820BF1193DB14900796100 /* Honduras~ipad.png in Resources */,
 				6B820C5F193DB14900796100 /* Switzerland@2x.png in Resources */,
@@ -1318,16 +1401,18 @@
 				6B820C2C193DB14900796100 /* Croatia.png in Resources */,
 				6B820C0E193DB14900796100 /* France@2x~ipad.png in Resources */,
 				6B820BFB193DB14900796100 /* Spain~ipad.png in Resources */,
+				6BB6436B1940603100F52C8F /* bg_share-ipad@2x.png in Resources */,
 				6B820C20193DB14900796100 /* Usa@2x~ipad.png in Resources */,
 				6B842CE5193DF7E600E36A36 /* Mexico_l.png in Resources */,
 				6B842CD6193DF7E600E36A36 /* Colombia_l.png in Resources */,
+				6BB64375194069D400F52C8F /* macaw_1@2x~ipad.png in Resources */,
 				6B842CDD193DF7E600E36A36 /* Germany_l.png in Resources */,
 				6B842CEB193DF7E600E36A36 /* Switzerland_l.png in Resources */,
 				6BD6424E1937650B00FDF724 /* bg_cell@2x.png in Resources */,
 				6B842CCF193DF7E600E36A36 /* Argentina_l.png in Resources */,
 				6B820C17193DB14900796100 /* Mexico@2x~ipad.png in Resources */,
 				6B88C7651938658600622F4D /* OpenSans-BoldItalic.ttf in Resources */,
-				6B430455193C54A3001BD6C4 /* bg_cell-iPad@2x.png in Resources */,
+				6B430455193C54A3001BD6C4 /* bg_cell@2x~ipad.png in Resources */,
 				6B842CED193DF7E600E36A36 /* Uruguay_l.png in Resources */,
 				6B820C40193DB14900796100 /* Uruguay.png in Resources */,
 				6B88C7641938658600622F4D /* OpenSans-Bold.ttf in Resources */,
@@ -1349,6 +1434,7 @@
 				6B820C34193DB14900796100 /* Iran.png in Resources */,
 				6B820BFA193DB14900796100 /* Russia~ipad.png in Resources */,
 				432C51B31922EF1700EB1929 /* README.txt in Resources */,
+				6B9F308B1940737A00364C81 /* btn_share@2x~ipad.png in Resources */,
 				6B842CF4193DFA1200E36A36 /* nok_1.png in Resources */,
 				6B820C2E193DB14900796100 /* England.png in Resources */,
 				6B820C61193DB14900796100 /* Uruguay@2x.png in Resources */,
@@ -1358,12 +1444,14 @@
 				6B820BED193DB14900796100 /* France~ipad.png in Resources */,
 				6B842CEA193DF7E600E36A36 /* Spain_l.png in Resources */,
 				6B820C02193DB14900796100 /* Australia@2x~ipad.png in Resources */,
+				6BB64374194069D400F52C8F /* macaw_3@2x~ipad.png in Resources */,
 				6B820BE8193DB14900796100 /* Costa Rica~ipad.png in Resources */,
 				6B842CDE193DF7E600E36A36 /* Ghana_l.png in Resources */,
 				432C51B71922F73700EB1929 /* end_of_line_icon.png in Resources */,
 				6B88C7661938658600622F4D /* OpenSans-ExtraBold.ttf in Resources */,
 				6B820C31193DB14900796100 /* Ghana.png in Resources */,
 				6B820C3C193DB14900796100 /* Russia.png in Resources */,
+				6BB643561940477100F52C8F /* macaw_1@2x.png in Resources */,
 				6B820C19193DB14900796100 /* Nigeria@2x~ipad.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

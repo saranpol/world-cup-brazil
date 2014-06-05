@@ -42,6 +42,7 @@ typedef void (^APIFail)(NSError*);
 - (void)saveObject:(id)obj forKey:(NSString*)key;
 - (void)deleteObject:(NSString*)key;
 - (void)clearAllUserDefault;
+- (void)reloadViewMain;
 
 // API
 - (void)api_cancel_all_call;

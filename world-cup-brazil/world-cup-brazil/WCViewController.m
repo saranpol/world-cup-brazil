@@ -54,13 +54,18 @@
     GADBannerView *ad;
     if(IS_IPAD){
         ad = [[GADBannerView alloc] initWithAdSize:kGADAdSizeLeaderboard];
-        ad.adUnitID = @"a15372b61e2b31f";
+//        ad.adUnitID = @"a15372b61e2b31f";
+        ad.adUnitID = @"ca-app-pub-6262014690363579/5779916448";
         [ViewUtil setFrame:ad x:20 y:1024-90];
     }else{
         ad = [[GADBannerView alloc] initWithAdSize:kGADAdSizeBanner];
-        ad.adUnitID = @"a15372b59d3f15b";
+//        ad.adUnitID = @"a15372b59d3f15b";
+        ad.adUnitID = @"ca-app-pub-6262014690363579/5779916448";
         [ViewUtil setFrame:ad y:self.view.frame.size.height-50];
     }
+    
+    
+    
     
 
     ad.rootViewController = self;
@@ -130,7 +135,7 @@
             }
             
             self.mDicGroupData = newDic;
-//            NSLog(@"mDicGroupData %@",mDicGroupData);
+            NSLog(@"mDicGroupData %@",mDicGroupData);
 
 
             [mTable reloadData];
@@ -192,6 +197,14 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     CellVS *cell = [tableView dequeueReusableCellWithIdentifier:@"CellVS" forIndexPath:indexPath];
+
+//    if (cell == nil) {
+//        NSArray *nibArray = [[NSBundle mainBundle] loadNibNamed:@"CellVS" owner:self options:nil];
+//        cell = [nibArray objectAtIndex:0];
+//        [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
+//    }
+    
+    
     
     NSString *s = [mArrayGroupData objectAtIndex:indexPath.section];
     NSArray *ary = [mDicGroupData objectForKey:s];
@@ -205,6 +218,14 @@
     [cell.mLabelT2 setText:[[d objectForKey:@"t2"] capitalizedString]];
     
     
+//    // set default x
+//    if ([self isiPad]) {
+//        NSLog(@"set iPad");
+//    }else {
+//        //    mContentView
+//        [ViewUtil setOriginX:cell.mContentView x:32.0f];
+//    }
+
     
     BOOL isTeam1 = NO;
     NSRange range = [[d objectForKey:@"t1"] rangeOfString:@"["];
@@ -226,11 +247,14 @@
         [cell.mButtonT2 setImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@.png",[[d objectForKey:@"t2"] capitalizedString]]] forState:UIControlStateNormal];
     }
     
-    
+    [cell.mImagePredict setHidden:YES];
     [cell.mButtonPredict setHidden:YES];
+    
     if (isTeam1 == YES && isTeam2 == YES) {
         [cell.mButtonPredict setHidden:NO];
-    }
+    }else
+        [cell.mImagePredict setHidden:NO];
+
 
     NSInteger m = [[d objectForKey:@"m"] integerValue];
     [cell.mButtonT1 setTag:m];
@@ -503,6 +527,11 @@
 }
 
 - (void)didReloadViewMain {
+    [mTable reloadData];
+}
+
+- (void)reloadData {
+    NSLog(@"reloadData");
     [mTable reloadData];
 }
 

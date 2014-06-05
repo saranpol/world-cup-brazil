@@ -130,7 +130,9 @@ NSString *M_TABLE = @"M_TABLE_1";
 // #PERSISTENCE_END
 
 
-
+- (void)reloadViewMain {
+    [mVC reloadData];
+}
 
 
 

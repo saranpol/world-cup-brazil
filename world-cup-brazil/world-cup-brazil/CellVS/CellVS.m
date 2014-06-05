@@ -18,10 +18,12 @@
 @synthesize mButtonT1;
 @synthesize mButtonT2;
 @synthesize mButtonPredict;
+@synthesize mImagePredict;
 @synthesize mSwitch;
 @synthesize mDate;
 @synthesize mMatch;
 @synthesize mDelegate;
+@synthesize mContentView;
 
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier

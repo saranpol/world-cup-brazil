@@ -23,6 +23,7 @@ typedef void (^RemoveViewDone)();
 + (void)setFrame:(UIView*)v x:(CGFloat)x;
 + (void)setFrame:(UIView*)v y:(CGFloat)y;
 + (void)setOriginY:(UIView*)v y:(float)y;
++ (void)setOriginX:(UIView*)v x:(float)x;
 + (UIImage*)getInsetImage:(UIImage*)image;
 + (CGFloat)getLabelHeight:(UILabel*)label;
 

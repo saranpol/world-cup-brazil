@@ -15,7 +15,10 @@
 @property (nonatomic, weak) IBOutlet UIImageView *mImageT2;
 @property (nonatomic, weak) IBOutlet UIImageView *mImageAnimal;
 @property (nonatomic, weak) IBOutlet UIView *mViewContent;
-@property (nonatomic, weak) IBOutlet UILabel *mTitle;
+@property (nonatomic, weak) IBOutlet UILabel *mT1;
+@property (nonatomic, weak) IBOutlet UILabel *mT2;
+@property (nonatomic, weak) IBOutlet UILabel *mDetailApp;
+@property (nonatomic, weak) IBOutlet UILabel *mTime;
 @property (nonatomic, assign) NSInteger mCountLR;
 
 

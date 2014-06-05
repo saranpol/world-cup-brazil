@@ -8,6 +8,7 @@
 
 #import "ViewPredict.h"
 #import "ViewUtil.h"
+#import "API.h"
 
 
 @implementation ViewPredict
@@ -18,7 +19,10 @@
 @synthesize mImageAnimal;
 @synthesize mViewContent;
 @synthesize mCountLR;
-@synthesize mTitle;
+@synthesize mT1;
+@synthesize mT2;
+@synthesize mDetailApp;
+@synthesize mTime;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -50,7 +54,46 @@
         [mImageT2 setImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@_l.png",[[mDictMatch objectForKey:@"t2"] capitalizedString]]]];
     }
     
-    [mTitle setText:[NSString stringWithFormat:@"%@ Vs %@", [[mDictMatch objectForKey:@"t1"] capitalizedString] ,[[mDictMatch objectForKey:@"t2"] capitalizedString]]];
+    
+    int fontSize = 14;
+    int fontSize2 = 10;
+    int fontSize3 = 12;
+
+    if ( UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ) {
+        fontSize = 25;
+        fontSize2 = 16;
+        fontSize3 = 18;
+    }
+    
+    [mT1 setFont:[UIFont fontWithName:@"Open Sans" size:fontSize]];
+    [mT2 setFont:[UIFont fontWithName:@"Open Sans" size:fontSize]];
+    [mDetailApp setFont:[UIFont fontWithName:@"Open Sans" size:fontSize2]];
+    [mTime setFont:[UIFont fontWithName:@"Open Sans" size:fontSize3]];
+
+
+
+    [mT1 setText:[NSString stringWithFormat:@"%@", [[mDictMatch objectForKey:@"t1"] capitalizedString]]];
+    [mT2 setText:[NSString stringWithFormat:@"%@", [[mDictMatch objectForKey:@"t2"] capitalizedString]]];
+    
+    
+    
+    NSString *sTime = [mDictMatch objectForKey:@"time"];
+    NSString *sConvertTime = [self getTime:sTime];
+    [mTime setText:sConvertTime];
+    
+    mTime.alpha = 0;
+    mDetailApp.alpha = 0;
+}
+
+- (NSString*)getTime:(NSString*)time {
+    NSDateFormatter *df = [[NSDateFormatter alloc] init];
+    [df setLocale:[NSLocale localeWithLocaleIdentifier:@"en_US"]];
+    [df setDateFormat:@"yyyy-MM-dd'T'HH:mmZZZZ"];
+    NSDate *date = [df dateFromString:time];
+    [df setTimeZone:[NSTimeZone localTimeZone]];
+    [df setLocale:[NSLocale currentLocale]];
+    [df setDateFormat:@"d MMM YYYY HH:MM"];
+    return [df stringFromDate:date];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -63,7 +106,7 @@
         self.mCountLR++;
         mImageAnimal.transform = CGAffineTransformMake(mImageAnimal.transform.a * -1, 0, 0, 1, mImageAnimal.transform.tx, 0);
         NSNumber *winner = [mDictMatch objectForKey:@"winner"];
-        if(mCountLR < 4+[winner integerValue])
+        if(mCountLR < 5+[winner integerValue])
             [self performSelector:@selector(animateLR) withObject:nil afterDelay:0.5];
         else{
             [self performSelector:@selector(animateNokFly) withObject:nil afterDelay:0.1];
@@ -75,7 +118,7 @@
 
 
 - (void)animateNokFly {
-    NSArray *imageNames = @[@"nok_1.png", @"nok_2.png"];
+    NSArray *imageNames = @[@"macaw_2.png", @"macaw_3.png"];
     NSMutableArray *images = [[NSMutableArray alloc] init];
     for (int i = 0; i < imageNames.count; i++) {
         [images addObject:[UIImage imageNamed:[imageNames objectAtIndex:i]]];
@@ -87,18 +130,18 @@
 }
 
 - (void)animateAnimal {
-    
+    NSNumber *winner = [mDictMatch objectForKey:@"winner"];
+
     [UIView animateWithDuration:2.0
                           delay:0.0
          usingSpringWithDamping:0.4
           initialSpringVelocity:0.0
                         options:UIViewAnimationOptionCurveEaseInOut
                      animations:^{
-                         NSNumber *winner = [mDictMatch objectForKey:@"winner"];
                          
-                         float y = mImageT1.frame.origin.y + 90;
+                         float y = mImageT1.frame.origin.y - 75;
                          if ( UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad )
-                            y = mImageT1.frame.origin.y + 170;
+                            y = mImageT1.frame.origin.y - 152;
                          
                          
                          switch ([winner integerValue]) {
@@ -117,9 +160,39 @@
                              }
                          }
                      }completion:^(BOOL finished){
-                         
+
+                         switch ([winner integerValue]) {
+                             case 0:{ // Draw
+                                 break;
+                             }
+                             case 1: // T1
+                             case 2: // T2
+                                 [mImageAnimal stopAnimating];
+                                 [mImageAnimal setImage:[UIImage imageNamed:@"macaw_1.png"]];
+                                 [self fadein];
+                                 break;
+                         }
                      }];
 }
+
+
+-(void) fadein
+{
+    mTime.alpha = 0;
+    mDetailApp.alpha = 0;
+    [UIView beginAnimations:nil context:nil];
+    [UIView setAnimationCurve:UIViewAnimationCurveEaseIn];
+    
+    //don't forget to add delegate.....
+    [UIView setAnimationDelegate:self];
+    
+    [UIView setAnimationDuration:0.7];
+    mTime.alpha = 1;
+    mDetailApp.alpha = 1;
+    
+    [UIView commitAnimations];
+}
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -139,6 +212,8 @@
 */
 
 - (IBAction)clickBack:(id)sender {
+    API *a = [API getAPI];
+    [a reloadViewMain];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 

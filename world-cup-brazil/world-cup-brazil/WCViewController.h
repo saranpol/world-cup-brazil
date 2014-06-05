@@ -30,5 +30,5 @@
 - (void)updateData;
 - (void)showPicker;
 - (void)hidePicker;
-
+- (void)reloadData;
 @end

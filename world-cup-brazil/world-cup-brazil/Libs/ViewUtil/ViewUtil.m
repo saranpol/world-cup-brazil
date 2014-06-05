@@ -104,6 +104,12 @@
 	v.frame = frame;
 }
 
++ (void)setOriginX:(UIView*)v x:(float)x{
+	CGRect frame = v.frame;
+	frame.origin.x = x;
+	v.frame = frame;
+}
+
 + (UIImage*)getInsetImage:(UIImage*)image {
     return [image stretchableImageWithLeftCapWidth:image.size.width/2.0 topCapHeight:image.size.height/2.0];
 }

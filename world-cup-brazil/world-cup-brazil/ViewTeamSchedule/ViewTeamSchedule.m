@@ -247,10 +247,13 @@
         [cell.mButtonT2 setImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@.png",[[d objectForKey:@"t2"] capitalizedString]]] forState:UIControlStateNormal];
     }
     
+    [cell.mImagePredict setHidden:YES];
     [cell.mButtonPredict setHidden:YES];
+    
     if (isTeam1 == YES && isTeam2 == YES) {
         [cell.mButtonPredict setHidden:NO];
-    }
+    }else
+        [cell.mImagePredict setHidden:NO];
     
     NSInteger m = [[d objectForKey:@"m"] integerValue];
     [cell.mButtonT1 setTag:m];
@@ -351,9 +354,13 @@
 }
 
 - (IBAction)clickFlipBack:(id)sender {
-    if (mDelegate) {
-        [mDelegate didReloadViewMain];
-    }
+//    if (mDelegate) {
+//        [mDelegate didReloadViewMain];
+//    }
+    
+    API *a = [API getAPI];
+    [a reloadViewMain];
+    
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
