@@ -41,7 +41,7 @@
     NSDictionary *json = [a getObject:M_TABLE];
     if(json){
         self.mArrayData = [json objectForKey:@"data"];
-        
+        [self processArray];
         [mTable reloadData];
     }
     
@@ -87,7 +87,57 @@
 }
 
 
-
+- (void)processArray {
+    NSMutableArray *aryData = [[NSMutableArray alloc] initWithArray:mArrayData];
+    
+    NSMutableArray *oneTeamAry = [[NSMutableArray alloc]init];
+    for (NSDictionary *d in aryData) {
+        if ([[d objectForKey:@"t1"] isEqualToString:mInterestTeam]) {
+            [oneTeamAry addObject:d];
+        }
+        
+        if ([[d objectForKey:@"t2"] isEqualToString:mInterestTeam]) {
+            [oneTeamAry addObject:d];
+        }
+    }
+    
+    
+    aryData = oneTeamAry;
+    
+    NSMutableArray *newAry = [[NSMutableArray alloc]init];
+    NSMutableDictionary *newDic = [[NSMutableDictionary alloc]init];
+    
+    for (NSDictionary *d in aryData) {
+        
+        NSString *sTime = [d objectForKey:@"time"];
+        NSString *sConvertTime = [self getTime:sTime];
+        
+        BOOL iSAdd = NO;
+        for (NSString * s in newAry) {
+            if ([s isEqualToString:sConvertTime])
+                iSAdd = YES;
+        }
+        
+        if (!iSAdd) {
+            [newAry addObject:sConvertTime];
+            // save dic
+            [newDic setObject:[NSMutableArray array] forKey:sConvertTime];
+        }
+    }
+    
+    self.mArrayGroupData = newAry;
+    //            NSLog(@"mArrayGroupData %@",mArrayGroupData);
+    
+    for (NSDictionary *d in aryData) {
+        NSString *sTime = [d objectForKey:@"time"];
+        NSString *sConvertTime = [self getTime:sTime];
+        NSMutableArray *tempAry = [newDic objectForKey:sConvertTime];
+        [tempAry addObject:d];
+    }
+    
+    self.mDicGroupData = newDic;
+    //            NSLog(@"mDicGroupData %@",mDicGroupData);
+}
 
 
 - (void)updateData:(UIRefreshControl *)refreshControl {
@@ -108,57 +158,7 @@
         NSDictionary *json = (NSDictionary*)JSON;
         if(json){
             self.mArrayData = [json objectForKey:@"data"];
-            NSMutableArray *aryData = [[NSMutableArray alloc]init];
-            aryData = [json objectForKey:@"data"];
-            
-            
-            NSMutableArray *oneTeamAry = [[NSMutableArray alloc]init];
-            for (NSDictionary *d in aryData) {
-                if ([[d objectForKey:@"t1"] isEqualToString:mInterestTeam]) {
-                    [oneTeamAry addObject:d];
-                }
-                
-                if ([[d objectForKey:@"t2"] isEqualToString:mInterestTeam]) {
-                    [oneTeamAry addObject:d];
-                }
-            }
-
-
-            aryData = oneTeamAry;
-
-            NSMutableArray *newAry = [[NSMutableArray alloc]init];
-            NSMutableDictionary *newDic = [[NSMutableDictionary alloc]init];
-
-            for (NSDictionary *d in aryData) {
-                
-                NSString *sTime = [d objectForKey:@"time"];
-                NSString *sConvertTime = [self getTime:sTime];
-
-                BOOL iSAdd = NO;
-                for (NSString * s in newAry) {
-                    if ([s isEqualToString:sConvertTime])
-                        iSAdd = YES;
-                }
-                
-                if (!iSAdd) {
-                    [newAry addObject:sConvertTime];
-                    // save dic
-                    [newDic setObject:[NSMutableArray array] forKey:sConvertTime];
-                }
-            }
-            
-            self.mArrayGroupData = newAry;
-//            NSLog(@"mArrayGroupData %@",mArrayGroupData);
-
-            for (NSDictionary *d in aryData) {
-                NSString *sTime = [d objectForKey:@"time"];
-                NSString *sConvertTime = [self getTime:sTime];
-                NSMutableArray *tempAry = [newDic objectForKey:sConvertTime];
-                [tempAry addObject:d];
-            }
-            
-            self.mDicGroupData = newDic;
-//            NSLog(@"mDicGroupData %@",mDicGroupData);
+            [self processArray];
 
 
             [mTable reloadData];
@@ -194,7 +194,7 @@
     NSDate *date = [df dateFromString:time];
     [df setTimeZone:[NSTimeZone localTimeZone]];
     [df setLocale:[NSLocale currentLocale]];
-    [df setDateFormat:@"d MMM YYYY"];
+    [df setDateFormat:@"EEE d MMM"];
     return [df stringFromDate:date];
 }
 

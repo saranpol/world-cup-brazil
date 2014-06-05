@@ -292,15 +292,19 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                         <rect key="frame" x="443" y="211" width="240" height="160"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kHM-ko-maF">
-                                        <rect key="frame" x="114" y="539" width="500" height="30"/>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="kHM-ko-maF">
+                                        <rect key="frame" x="22" y="434" width="685" height="134"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="70"/>
                                         <color key="textColor" red="0.51372549020000002" green="0.52941176469999995" blue="0.54117647059999996" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="macaw_1.png" translatesAutoresizingMaskIntoConstraints="NO" id="qSS-Cm-JGa">
                                         <rect key="frame" x="264" y="427" width="200" height="160"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="macaw_1.png" translatesAutoresizingMaskIntoConstraints="NO" id="M8r-Wn-qDi">
+                                        <rect key="frame" x="768" y="-200" width="200" height="160"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="App Store : world football cup 2014 reminder" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EO9-tc-n3s">
@@ -371,6 +375,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                     <connections>
                         <outlet property="mDetailApp" destination="EO9-tc-n3s" id="Mdx-03-vGh"/>
                         <outlet property="mImageAnimal" destination="qSS-Cm-JGa" id="XaA-9Q-1ba"/>
+                        <outlet property="mImageAnimal2" destination="M8r-Wn-qDi" id="Cpb-aF-GMC"/>
                         <outlet property="mImageT1" destination="O5V-LC-M9m" id="vNt-AU-CN5"/>
                         <outlet property="mImageT2" destination="gLv-mT-Z1R" id="bBw-Lm-H4R"/>
                         <outlet property="mT1" destination="iDH-NH-rXh" id="U1J-OS-61Y"/>

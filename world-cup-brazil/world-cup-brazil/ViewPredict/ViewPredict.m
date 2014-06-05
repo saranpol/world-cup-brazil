@@ -17,6 +17,7 @@
 @synthesize mImageT1;
 @synthesize mImageT2;
 @synthesize mImageAnimal;
+@synthesize mImageAnimal2;
 @synthesize mViewContent;
 @synthesize mCountLR;
 @synthesize mT1;
@@ -68,7 +69,7 @@
     [mT1 setFont:[UIFont fontWithName:@"Open Sans" size:fontSize]];
     [mT2 setFont:[UIFont fontWithName:@"Open Sans" size:fontSize]];
     [mDetailApp setFont:[UIFont fontWithName:@"Open Sans" size:fontSize2]];
-    [mTime setFont:[UIFont fontWithName:@"Open Sans" size:fontSize3]];
+    [mTime setFont:[UIFont fontWithName:@"Open Sans" size:mTime.font.pointSize]];
 
 
 
@@ -92,7 +93,7 @@
     NSDate *date = [df dateFromString:time];
     [df setTimeZone:[NSTimeZone localTimeZone]];
     [df setLocale:[NSLocale currentLocale]];
-    [df setDateFormat:@"d MMM YYYY HH:MM"];
+    [df setDateFormat:@"EEE d MMM HH:mm"];
     return [df stringFromDate:date];
 }
 
@@ -127,6 +128,12 @@
     mImageAnimal.animationImages = images;
     mImageAnimal.animationDuration = 0.7;
     [mImageAnimal startAnimating];
+
+    if([[mDictMatch objectForKey:@"winner"] integerValue] == 0){
+        mImageAnimal2.animationImages = images;
+        mImageAnimal2.animationDuration = 0.7;
+        [mImageAnimal2 startAnimating];
+    }
 }
 
 - (void)animateAnimal {
@@ -134,7 +141,7 @@
 
     [UIView animateWithDuration:2.0
                           delay:0.0
-         usingSpringWithDamping:0.4
+         usingSpringWithDamping:0.5
           initialSpringVelocity:0.0
                         options:UIViewAnimationOptionCurveEaseInOut
                      animations:^{
@@ -145,10 +152,13 @@
                          
                          
                          switch ([winner integerValue]) {
-                             case 0:{ // Draw
-                                 float x = (mImageT1.frame.origin.x + mImageT2.frame.origin.x)/2.0;
-                                 [ViewUtil setFrame:mImageAnimal x:x y:y];
-                                 break;
+//                             case 0:{ // Draw
+//                                 float x = (mImageT1.frame.origin.x + mImageT2.frame.origin.x)/2.0;
+//                                 [ViewUtil setFrame:mImageAnimal x:x y:y];
+//                                 break;
+//                             }
+                             case 0:{
+                                 [ViewUtil setFrame:mImageAnimal2 x:mImageT2.frame.origin.x y:y];
                              }
                              case 1:{ // T1
                                  [ViewUtil setFrame:mImageAnimal x:mImageT1.frame.origin.x y:y];
@@ -162,9 +172,12 @@
                      }completion:^(BOOL finished){
                          [self fadein];
                          switch ([winner integerValue]) {
-                             case 0:{ // Draw
-                                 break;
-                             }
+//                             case 0:{ // Draw
+//                                 break;
+//                             }
+                             case 0:
+                                 [mImageAnimal2 stopAnimating];
+                                 [mImageAnimal2 setImage:[UIImage imageNamed:@"macaw_1.png"]];
                              case 1: // T1
                              case 2: // T2
                                  [mImageAnimal stopAnimating];
