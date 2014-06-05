@@ -363,7 +363,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                         </state>
                                         <connections>
                                             <action selector="clickBack:" destination="I3n-Od-dX4" eventType="touchUpInside" id="Cpv-S5-jxn"/>
-                                            <action selector="clickFlipBack:" destination="bnT-Bl-GQ9" eventType="touchUpInside" id="EfF-UA-VAF"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -424,7 +423,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                             <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="clickFlipBack:" destination="bnT-Bl-GQ9" eventType="touchUpInside" id="ejr-3x-ZUU"/>
+                                            <action selector="clickFlipBack:" destination="bnT-Bl-GQ9" eventType="touchUpInside" id="jAd-ht-kci"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -451,7 +450,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
                                             <connections>
-                                                <action selector="clickEndOfLine:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="5Z9-HE-a4Y"/>
+                                                <action selector="clickEndOfLine:" destination="bnT-Bl-GQ9" eventType="touchUpInside" id="SZ8-zM-NN1"/>
                                             </connections>
                                         </button>
                                         <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="StH-yl-hg0">
@@ -657,6 +656,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="78k-iM-pKd"/>
-        <segue reference="daA-s1-SZg"/>
+        <segue reference="uym-Fm-fSZ"/>
     </inferredMetricsTieBreakers>
 </document>
