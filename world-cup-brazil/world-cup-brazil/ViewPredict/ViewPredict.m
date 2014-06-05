@@ -160,7 +160,7 @@
                              }
                          }
                      }completion:^(BOOL finished){
-
+                         [self fadein];
                          switch ([winner integerValue]) {
                              case 0:{ // Draw
                                  break;
@@ -169,7 +169,6 @@
                              case 2: // T2
                                  [mImageAnimal stopAnimating];
                                  [mImageAnimal setImage:[UIImage imageNamed:@"macaw_1.png"]];
-                                 [self fadein];
                                  break;
                          }
                      }];

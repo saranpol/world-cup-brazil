@@ -204,7 +204,7 @@
     [df setLocale:[NSLocale localeWithLocaleIdentifier:@"en_US"]];
     [df setDateFormat:@"yyyy-MM-dd'T'HH:mmZZZZ"];
     NSDate *date = [df dateFromString:time];
-    cell.mDate = [date dateByAddingTimeInterval:-15*60]; // 15 Minutes before
+    cell.mDate = date;//[date dateByAddingTimeInterval:-15*60]; // 15 Minutes before
     
     [df setTimeZone:[NSTimeZone localTimeZone]];
     [df setLocale:[NSLocale currentLocale]];
@@ -347,7 +347,7 @@
     [self hidePicker];
     
     API *a = [API getAPI];
-    a.mDate = [a.mDate dateByAddingTimeInterval:mDatePickerView.countDownDuration];
+    a.mDate = [a.mDate dateByAddingTimeInterval:-mDatePickerView.countDownDuration];
     
     [self setNotification];
 
