@@ -16,6 +16,8 @@
 @synthesize mDictMatch;
 @synthesize mImageT1;
 @synthesize mImageT2;
+@synthesize mImage1;
+@synthesize mImage2;
 @synthesize mImageAnimal;
 @synthesize mImageAnimal2;
 @synthesize mViewContent;
@@ -23,7 +25,9 @@
 @synthesize mT1;
 @synthesize mT2;
 @synthesize mDetailApp;
+@synthesize mDetailApp2;
 @synthesize mTime;
+@synthesize mScrollView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -45,6 +49,7 @@
         [mImageT1 setImage:[UIImage imageNamed:@"Unknown_l.png"]];
     }else {
         [mImageT1 setImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@_l.png",[[mDictMatch objectForKey:@"t1"] capitalizedString]]]];
+        [mImage1 setImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@_ad.jpg",[[mDictMatch objectForKey:@"t1"] capitalizedString]]]];
     }
     
     NSRange range2 = [[mDictMatch objectForKey:@"t2"] rangeOfString:@"["];
@@ -53,6 +58,7 @@
         [mImageT2 setImage:[UIImage imageNamed:@"Unknown_l.png"]];
     }else {
         [mImageT2 setImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@_l.png",[[mDictMatch objectForKey:@"t2"] capitalizedString]]]];
+        [mImage2 setImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@_ad.jpg",[[mDictMatch objectForKey:@"t2"] capitalizedString]]]];
     }
     
     
@@ -69,6 +75,7 @@
     [mT1 setFont:[UIFont fontWithName:@"Open Sans" size:fontSize]];
     [mT2 setFont:[UIFont fontWithName:@"Open Sans" size:fontSize]];
     [mDetailApp setFont:[UIFont fontWithName:@"Open Sans" size:fontSize2]];
+    [mDetailApp2 setFont:[UIFont fontWithName:@"Open Sans" size:fontSize2]];
     [mTime setFont:[UIFont fontWithName:@"Open Sans" size:mTime.font.pointSize]];
 
 
@@ -82,8 +89,15 @@
     NSString *sConvertTime = [self getTime:sTime];
     [mTime setText:sConvertTime];
     
-    mTime.alpha = 0;
-    mDetailApp.alpha = 0;
+    
+//    mTime.alpha = 0;
+//    mDetailApp.alpha = 0;
+}
+
+- (void)viewDidLayoutSubviews {
+    [super viewDidLayoutSubviews];
+    [mScrollView setContentSize:CGSizeMake(mScrollView.frame.size.width, 504.0f)];
+
 }
 
 - (NSString*)getTime:(NSString*)time {
@@ -141,14 +155,14 @@
 
     [UIView animateWithDuration:2.0
                           delay:0.0
-         usingSpringWithDamping:0.5
+         usingSpringWithDamping:0.6
           initialSpringVelocity:0.0
                         options:UIViewAnimationOptionCurveEaseInOut
                      animations:^{
                          
-                         float y = mImageT1.frame.origin.y - 75;
+                         float y = mImage1.frame.origin.y - 75;
                          if ( UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad )
-                            y = mImageT1.frame.origin.y - 152;
+                            y = mImage1.frame.origin.y - 152;
                          
                          
                          switch ([winner integerValue]) {
@@ -158,14 +172,14 @@
 //                                 break;
 //                             }
                              case 0:{
-                                 [ViewUtil setFrame:mImageAnimal2 x:mImageT2.frame.origin.x y:y];
+                                 [ViewUtil setFrame:mImageAnimal2 x:mImage2.frame.origin.x y:y];
                              }
                              case 1:{ // T1
-                                 [ViewUtil setFrame:mImageAnimal x:mImageT1.frame.origin.x y:y];
+                                 [ViewUtil setFrame:mImageAnimal x:mImage1.frame.origin.x y:y];
                                  break;
                              }
                              case 2:{ // T2
-                                 [ViewUtil setFrame:mImageAnimal x:mImageT2.frame.origin.x y:y];
+                                 [ViewUtil setFrame:mImageAnimal x:mImage2.frame.origin.x y:y];
                                  break;
                              }
                          }
@@ -190,8 +204,8 @@
 
 -(void) fadein
 {
-    mTime.alpha = 0;
-    mDetailApp.alpha = 0;
+//    mTime.alpha = 0;
+//    mDetailApp.alpha = 0;
     [UIView beginAnimations:nil context:nil];
     [UIView setAnimationCurve:UIViewAnimationCurveEaseIn];
     
@@ -199,8 +213,8 @@
     [UIView setAnimationDelegate:self];
     
     [UIView setAnimationDuration:0.7];
-    mTime.alpha = 1;
-    mDetailApp.alpha = 1;
+//    mTime.alpha = 1;
+//    mDetailApp.alpha = 1;
     
     [UIView commitAnimations];
 }
