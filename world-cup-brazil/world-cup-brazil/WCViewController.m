@@ -56,12 +56,12 @@
     if(IS_IPAD){
         ad = [[GADBannerView alloc] initWithAdSize:kGADAdSizeLeaderboard];
 //        ad.adUnitID = @"a15372b61e2b31f";
-        ad.adUnitID = @"ca-app-pub-6262014690363579/5779916448";
+        ad.adUnitID = ADMOB_ID;
         [ViewUtil setFrame:ad x:20 y:1024-90];
     }else{
         ad = [[GADBannerView alloc] initWithAdSize:kGADAdSizeBanner];
 //        ad.adUnitID = @"a15372b59d3f15b";
-        ad.adUnitID = @"ca-app-pub-6262014690363579/5779916448";
+        ad.adUnitID = ADMOB_ID;
         [ViewUtil setFrame:ad y:self.view.frame.size.height-50];
     }
     
@@ -70,7 +70,16 @@
     
 
     ad.rootViewController = self;
+#ifdef SHOW_ADS
     [self.view addSubview:ad];
+#else
+//    CGRect f = ad.frame;
+//    f.size.height++;
+//    f.origin.y--;
+//    UIView *x = [[UIView alloc] initWithFrame:f];
+//    [x setBackgroundColor:[UIColor whiteColor]];
+//    [self.view addSubview:x];
+#endif
     GADRequest *request = [GADRequest request];
 //    request.testDevices = @[ GAD_SIMULATOR_ID ];
     [ad loadRequest:request];
@@ -127,7 +136,7 @@
     }
     
     self.mDicGroupData = newDic;
-    NSLog(@"mDicGroupData %@",mDicGroupData);
+    //NSLog(@"mDicGroupData %@",mDicGroupData);
 }
 
 - (void)updateData:(UIRefreshControl *)refreshControl {
@@ -386,7 +395,7 @@
 //    if (mIsShowPicker)
 //        return
     
-    NSLog(@"csdsd %f",self.view.frame.size.height);
+    //NSLog(@"csdsd %f",self.view.frame.size.height);
     
     int y = 64;
     if (self.view.frame.size.height == 480) {

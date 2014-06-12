@@ -53,17 +53,19 @@
     GADBannerView *ad;
     if(IS_IPAD){
         ad = [[GADBannerView alloc] initWithAdSize:kGADAdSizeLeaderboard];
-        ad.adUnitID = @"a15372b61e2b31f";
+        ad.adUnitID = ADMOB_ID;
         [ViewUtil setFrame:ad x:20 y:1024-90];
     }else{
         ad = [[GADBannerView alloc] initWithAdSize:kGADAdSizeBanner];
-        ad.adUnitID = @"a15372b59d3f15b";
+        ad.adUnitID = ADMOB_ID;
         [ViewUtil setFrame:ad y:self.view.frame.size.height-50];
     }
     
 
     ad.rootViewController = self;
+#ifdef SHOW_ADS
     [self.view addSubview:ad];
+#endif
     GADRequest *request = [GADRequest request];
 //    request.testDevices = @[ GAD_SIMULATOR_ID ];
     [ad loadRequest:request];
