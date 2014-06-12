@@ -20,7 +20,7 @@ table = {'data':[
 {'m':12,'t1':'GERMANY','t2':'PORTUGAL','time':'2014-06-16T13:00-03:00','winner':0},
 {'m':13,'t1':'IRAN','t2':'NIGERIA','time':'2014-06-16T16:00-03:00','winner':1},
 {'m':14,'t1':'GHANA','t2':'USA','time':'2014-06-16T19:00-03:00','winner':2},
-{'m':15,'t1':'BELGIUM','t2':'ALGERIA','time':'2014-06-17T13:00-03:00','winner':0},
+{'m':15,'t1':'BELGIUM','t2':'ALGERIA','time':'2014-06-17T13:00-03:00','winner':1},
 {'m':16,'t1':'BRAZIL','t2':'MEXICO','time':'2014-06-17T16:00-03:00','winner':1},
 {'m':17,'t1':'RUSSIA','t2':'KOREA REPUBLIC','time':'2014-06-17T18:00-03:00','winner':0},
 {'m':18,'t1':'AUSTRALIA','t2':'NETHERLANDS','time':'2014-06-18T13:00-03:00','winner':2},
