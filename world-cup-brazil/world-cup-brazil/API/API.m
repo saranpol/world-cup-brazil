@@ -164,6 +164,7 @@ NSString *M_TABLE = @"M_TABLE_1";
     NSString *postURL = (https) ? API_HTTPS : API_HTTP;
     postURL = [postURL stringByAppendingString:postPath];
     
+//    NSLog(@"%@",postURL);
     
     [manager POST:postURL
        parameters:params
