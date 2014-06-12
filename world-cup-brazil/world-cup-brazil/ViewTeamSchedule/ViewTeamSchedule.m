@@ -75,6 +75,7 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [mTitle setText:mInterestTeam];
+    self.screenName = @"Team Schedule Screen";
 }
 
 

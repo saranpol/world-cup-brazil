@@ -10,8 +10,9 @@
 #import "UITableViewNoDelay.h"
 #import "CellVS.h"
 #import "ViewTeamSchedule.h"
+#import "GAITrackedViewController.h"
 
-@interface WCViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, CellVSDelegate> {
+@interface WCViewController : GAITrackedViewController <UITableViewDataSource, UITableViewDelegate, CellVSDelegate> {
     BOOL mIsShowPicker;
     int mCountDownTimer;
 }

@@ -9,14 +9,14 @@
 #import <UIKit/UIKit.h>
 #import "UITableViewNoDelay.h"
 #import "CellVS.h"
-
+#import "GAITrackedViewController.h"
 
 @protocol ViewTeamScheduleDelegate <NSObject>
 @optional
 - (void)didReloadViewMain;
 @end
 
-@interface ViewTeamSchedule : UIViewController <UITableViewDataSource, UITableViewDelegate, CellVSDelegate> {
+@interface ViewTeamSchedule : GAITrackedViewController <UITableViewDataSource, UITableViewDelegate, CellVSDelegate> {
     BOOL mIsShowPicker;
     int mCountDownTimer;
 }

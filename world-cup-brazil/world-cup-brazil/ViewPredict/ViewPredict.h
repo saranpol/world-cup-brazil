@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GAITrackedViewController.h"
 
-@interface ViewPredict : UIViewController
+@interface ViewPredict : GAITrackedViewController
 
 @property (nonatomic, strong) NSDictionary *mDictMatch;
 @property (nonatomic, weak) IBOutlet UIImageView *mImageT1;

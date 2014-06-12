@@ -3,6 +3,8 @@
 #import "API.h"
 #import "AFNetworking.h"
 #import "WCViewController.h"
+#import "GAIDictionaryBuilder.h"
+#import "GAI.h"
 
 @implementation API
 
@@ -205,6 +207,13 @@ NSString *M_TABLE = @"M_TABLE_1";
 
 
 - (void)gotoEndOfLine {
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"ui_action"     // Event category (required)
+                                                          action:@"button_press"  // Event action (required)
+                                                           label:@"end_of_line"          // Event label
+                                                           value:nil] build]];
+    
     NSString *url = @"itms-apps://itunes.apple.com/app/id729354602";
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];
 }

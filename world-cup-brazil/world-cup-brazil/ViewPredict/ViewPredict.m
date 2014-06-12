@@ -9,6 +9,8 @@
 #import "ViewPredict.h"
 #import "ViewUtil.h"
 #import "API.h"
+#import "GAI.h"
+#import "GAIDictionaryBuilder.h"
 
 
 @implementation ViewPredict
@@ -92,6 +94,11 @@
     
 //    mTime.alpha = 0;
 //    mDetailApp.alpha = 0;
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    self.screenName = @"Predict Screen";
 }
 
 - (void)viewDidLayoutSubviews {
@@ -255,6 +262,15 @@
 }
 
 - (IBAction)clickShare:(id)sender {
+
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"ui_action"     // Event category (required)
+                                                          action:@"button_press"  // Event action (required)
+                                                           label:@"share"          // Event label
+                                                           value:nil] build]];
+    
+    
     UIImage *image = [self saveImage];
     
     NSArray* dataToShare = @[image];  // ...or whatever pieces of data you want to share.
