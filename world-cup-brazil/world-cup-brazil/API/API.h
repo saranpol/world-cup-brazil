@@ -1,5 +1,8 @@
 #import <Foundation/Foundation.h>
 
+#define SHOW_ADS
+#define ADMOB_ID @"ca-app-pub-6262014690363579/5779916448"
+
 #define API_VERSION @"1.0"
 #define API_HTTP @"http://world-cup-brazil.appspot.com/"
 #define API_HTTPS @"https://world-cup-brazil.appspot.com/"
