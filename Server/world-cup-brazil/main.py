@@ -68,8 +68,8 @@ table = {'data':[
 #{'m':60,'t1':'NETHERLANDS','t2':'COSTA RICA','time':'2014-07-05T17:00-03:00','winner':2},
 {'m':61,'t1':'BRAZIL','t2':'GERMANY','time':'2014-07-08T17:00-03:00','winner':1},
 {'m':62,'t1':'NETHERLANDS','t2':'ARGENTINA','time':'2014-07-09T17:00-03:00','winner':2},
-{'m':63,'t1':'[L61]','t2':'[L62]','time':'2014-07-12T17:00-03:00','winner':2},
-{'m':64,'t1':'[W61]','t2':'[W62]','time':'2014-07-13T16:00-03:00','winner':1},
+{'m':63,'t1':'BRAZIL','t2':'NETHERLANDS','time':'2014-07-12T17:00-03:00','winner':2},
+{'m':64,'t1':'GERMANY','t2':'ARGENTINA','time':'2014-07-13T16:00-03:00','winner':1},
 ]}
 
 
